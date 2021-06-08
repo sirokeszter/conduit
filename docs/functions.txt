@@ -1,3 +1,14 @@
-Fuctions fund:
-1.
-2.
+Functions fund:
+1. Registration: user can log up by giving the Name, Email address, Password
+2. Log in: user can log in by giving the Email address and Password
+3. Log out: user can log out click the Log out button on the profile page
+4. Following: user can follow other authors
+5. Create new posts: user can create new blog posts and share with others
+6. Editing existing posts: user can edit own posts and refresh the contest of it
+7. Tagging posts: user can give tags to own posts
+8. Delete existing posts: user can delete own posts
+9. Favorize other posts: user can sign favorite posts from other authors
+10. Searching via tags: user can categories posts via tags
+11. Using Read more... function: user can read the full content by click on Read more..button
+12. Home page button: user can go back by click on the house pictogram the opening page
+13. Managing user settings: user can set or change own data by click on Update settings button
