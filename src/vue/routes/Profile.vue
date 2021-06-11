@@ -18,7 +18,7 @@
             <div v-else>
               <button
                 class="btn btn-sm btn-secondary action-btn"
-                v-if="profile.following"
+                v-if="profile.followed"
                 @click.prevent="unfollow()"
               >
                 <i class="ion-plus-round"></i> &nbsp;Unfollow
@@ -26,7 +26,7 @@
               </button>
               <button
                 class="btn btn-sm btn-outline-secondary action-btn"
-                v-if="!profile.following"
+                v-if="!profile.followed"
                 @click.prevent="follow()"
               >
                 <i class="ion-plus-round"></i> &nbsp;Follow
@@ -78,7 +78,14 @@ import { mapGetters } from "vuex";
 export default {
   name: "Profile",
   mounted() {
+    console.log("route params",this.$route.params)
     this.$store.dispatch("fetchProfile", this.$route.params);
+  },
+  props: {
+    followed: {
+      type: String,
+      required: false
+    }
   },
   computed: {
     ...mapGetters([
@@ -88,6 +95,9 @@ export default {
     ])
   },
   methods: {
+    fetchProfile() {
+      this.$store.dispatch("fetchProfile", this.params.profile.username);
+    },
     isCurrentUser() {
       if (this.user.username && this.profile.username) {
         return this.user.username === this.profile.username;
@@ -96,17 +106,16 @@ export default {
     },
     follow() {
       if (!this.is_authenticated) return;
-      this.$store.dispatch("setFollowProfile", this.$route.params);
+      this.$store.dispatch("followAuthor", this.$route.params);
     },
     unfollow() {
-      this.$store.dispatch("setFollowProfile", this.$route.params);
+      this.$store.dispatch("unfollowAuthor", this.$route.params);
     }
   },
   watch: {
-    $route(to) {
-      if (to.params && to.params.username) {
-        this.$store.dispatch("fetchProfile", to.params);
-      }
+    
+    followed() {
+      this.fetchProfile();
     }
   }
 };
