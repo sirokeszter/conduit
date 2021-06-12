@@ -7,7 +7,7 @@ CON TC 006	User login without data	Nem automatizálnám, mert negatív teszt és
 CON TC 007	User logging out	Nem automatizálnám, mert a settings vizsgálat magában foglalja az automatizálását.
 CON TC 008	Create new blog post with correct data	A003, CON TC 008, felület automatizálás, mert ismételt végrehajtást tartalmaz
 CON TC 009	Creating new blog post without data	Nem automatizálnám, mert negatív teszt és nem tartalmaz ismétlést.
-CON TC 010	Artical details view function	Nem automatizálnám, mert nem látom értelmét.
+CON TC 010	Articel details view function	Nem automatizálnám, mert nem látom értelmét.
 CON TC 011	Editing own artical (post)	A004, CON TC 011, felület automatizálás, mert ismételt végrehajtást tartalmaz
 CON TC 012	Deleting own post	Nem automatizálnám, mert nem látom értelmét.
 CON TC 013	Searching via tags	Nem automatizálnám, mert nem látom értelmét.
