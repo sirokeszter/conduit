@@ -2,7 +2,7 @@ CON TC 001	User registration with correct data and non-existing username	A001, C
 CON TC 002	User registration without data	Nem automatizálnám, mert negatív teszt és nem tartalmaz ismétlést.
 CON TC 003	User registration with uncorrect email address	Nem automatizálnám, mert negatív teszt és nem tartalmaz ismétlést.
 CON TC 004	User registration with existed Username	Nem automatizálnám, mert negatív teszt és nem tartalmaz ismétlést.
-CON TC 005	User login with existing, correct data	A002, CON TC 005, felület automatizálás, mert ismételt végrehajtást tartalmaz
+CON TC 005	User login with existing, correct data	A002, CON TC 005, felület automatizálás, mert ismételt végrehajtást tartalmaz, és adatbevitel igényes.
 CON TC 006	User login without data	Nem automatizálnám, mert negatív teszt és nem tartalmaz ismétlést.
 CON TC 007	User logging out	Nem automatizálnám, mert a settings vizsgálat magában foglalja az automatizálását.
 CON TC 008	Create new blog post with correct data	A003, CON TC 008, felület automatizálás, mert ismételt végrehajtást tartalmaz
@@ -14,5 +14,5 @@ CON TC 013	Searching via tags	Nem automatizálnám, mert nem látom értelmét. 
 CON TC 014	Following other authors	Nem automatizálnám, mert nem látom értelmét. Igazából fogalmam sincs, hogy kellene-e.
 CON TC 015	Favorize other posts	Nem automatizálnám, mert nem látom értelmét. Igazából fogalmam sincs, hogy kellene-e.
 CON TC 016	Home function	Nem automatizálnám, mert nem látom értelmét. Igazából fogalmam sincs, hogy kellene-e.
-CON TC 017	User setting  function	A005, CON TC 017, felület automatizálás, mert ismételt végrehajtást tartalmaz
+CON TC 017	User setting  function	A005, CON TC 017, felület automatizálás, mert ismételt végrehajtást tartalmaz,és adatbevitel igényes.
 
