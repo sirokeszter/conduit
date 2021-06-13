@@ -26,7 +26,7 @@ jobs:
     
     - name: Install Chrome
       run: |
-        apt install google-chrome-stable
+        sudo apt install google-chrome-stable
     
     - name: Install seleniumbase
       run: pip install seleniumbase
