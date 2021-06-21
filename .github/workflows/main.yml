@@ -37,7 +37,7 @@ jobs:
     
     - name: Run Tests
       run: |
-        selenium-side-runner seleniumide-tests/login.side --alluredir=allure-results
+        selenium-side-runner ./seleniumide-tests/login.side --alluredir=allure-results
         
     - name: Get Allure history
       uses: actions/checkout@v2
