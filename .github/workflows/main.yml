@@ -39,6 +39,10 @@ jobs:
       run: |
         seleniumbase install chromedriver
     
+    - name: Sleep for 30 seconds
+      run: sleep 30s
+      shell: bash
+    
     - name: Run Tests
       run: |
         selenium-side-runner -c "goog:chromeOptions.args=[--headless,--nogpu] browserName=chrome" ./seleniumide-tests/login.side --alluredir=allure-results
