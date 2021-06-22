@@ -1,5 +1,5 @@
 
-name: Python application
+name: Conduit test
 
 on:
   push:
@@ -34,10 +34,14 @@ jobs:
     - name: Install chromedriver
       run: |
         seleniumbase install chromedriver
+        
+    - name: Start conduit
+      run: |
+        docker-compose up -d
     
     - name: Run Tests
       run: |
-        selenium-side-runner project.side --alluredir=allure-results
+        selenium-side-runner ./seleniumide-tests/login.side --alluredir=allure-results
         
     - name: Get Allure history
       uses: actions/checkout@v2
