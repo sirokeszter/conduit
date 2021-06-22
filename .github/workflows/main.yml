@@ -45,7 +45,7 @@ jobs:
     
     - name: Run Tests
       run: |
-        selenium-side-runner -c "goog:chromeOptions.args=[--headless,--nogpu] browserName=chrome" ./seleniumide-tests/login.side --alluredir=allure-results
+        selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" ./seleniumide-tests/post.side --alluredir=allure-results
         
     - name: Get Allure history
       uses: actions/checkout@v2
