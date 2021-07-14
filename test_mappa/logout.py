@@ -1,7 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.common.exceptions import NoSuchElementException
 import time
 import csv
 
@@ -9,10 +8,12 @@ options = Options()
 # options.add_argument('--headless')
 options.add_argument('--disable-gpu')
 driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)
+from selenium.common.exceptions import NoSuchElementException
 
 try:
-    driver.get("http://localhost:1667/#/")
-    # Cookie accept:
+    driver.get("http://localhost:1667/")
+
+    #Cookie accept:
     button_accept = driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]').click()
     from selenium.webdriver.common.action_chains import ActionChains
 
@@ -38,6 +39,26 @@ try:
 
 
     fill_login("kiskakas@gmail.com", "Kiskakas123$")
+
+    # Activate Log out:
+    logout=driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[5]/a')
+    mousehover = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[5]/a')
+    ActionChains(driver).move_to_element(mousehover).perform()
+    time.sleep(3)
+    actions = ActionChains(driver)
+    actions.click(logout)
+    actions.perform()
+
+    #Checking the disappered username:
+    user_panel=driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a')
+
+    def test_element_does_not_exist(self):
+        with self.assertRaises(NoSuchElementException):
+            driver.find_element_by_xpath("user_panel")
+
+    print("User panel disappered.")
+
+
 
 finally:
     pass

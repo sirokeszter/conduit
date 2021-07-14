@@ -21,7 +21,7 @@ try:
     #     raise Exception("GDPR panel should not be found")
     def test_element_does_not_exist(self):
         with self.assertRaises(NoSuchElementException):
-            driver.find_element_by_xpath("cookie-policy-panel")
+            driver.find_element_by_id("cookie-policy-panel")
 
     print("Cookie panel disappered.")
 
