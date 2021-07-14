@@ -16,7 +16,7 @@ try:
     button_accept = driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]').click()
     from selenium.webdriver.common.action_chains import ActionChains
 
-    # Activate Sign in input field
+    # Activate Sign in input field:
     login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
     mousehover = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
     ActionChains(driver).move_to_element(mousehover).perform()

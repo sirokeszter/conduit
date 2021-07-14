@@ -49,7 +49,7 @@ try:
     # assert (alert_window == ref_text)
     # print(alert_window.text)
     # time.sleep(2)
-    # alert_window.accept()  # megnézzük,miután megnyomtuk, eltűnik-e
+    # alert_window.accept()  megnézzük,miután megnyomtuk, eltűnik-e
     # time.sleep(1)
 
     # alert_window = driver.find_element_by_xpath('/html/body/div[2]/div').text

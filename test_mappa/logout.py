@@ -49,7 +49,7 @@ try:
     actions.click(logout)
     actions.perform()
 
-    #Checking the disappered username:
+    # Checking the disappered username:
     user_panel=driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a')
 
     def test_element_does_not_exist(self):
