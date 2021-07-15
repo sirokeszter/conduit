@@ -38,10 +38,11 @@ try:
         button.click()
 
 
-    fill_login("kiskakas@gmail.com", "Kiskakas123$")
+    fill_login("kiskacsa5@gmail.com", "Kiskacsa5$")
 
     # Activate Log out:
-    logout=driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[5]/a')
+    time.sleep(3)
+    logout=driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[5]')
     mousehover = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[5]/a')
     ActionChains(driver).move_to_element(mousehover).perform()
     time.sleep(3)
@@ -50,14 +51,11 @@ try:
     actions.perform()
 
     # Checking the disappered username:
-    user_panel=driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a')
-
     def test_element_does_not_exist(self):
         with self.assertRaises(NoSuchElementException):
-            driver.find_element_by_xpath("user_panel")
+            driver.find_element_by_xpath("log_out")
 
     print("User panel disappered.")
-
 
 
 finally:

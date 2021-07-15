@@ -38,44 +38,34 @@ try:
         password.send_keys(pw)
         button.click()
 
-    fill_registration("kiskacsa10","kiskacsa10@gmail.com", "Kiskacsa10$")
+    fill_registration("kiskacsa5","kiskacsa5@gmail.com", "Kiskacsa5$")
 
-    # alert_button = driver.find_element_by_xpath('//div[4]/div/button').click()
-    # print(alert_button.text)
+    # time.sleep(3)
+    # main_window = driver.window_handles[0]
+    # alert_window=driver.find_element_by_xpath('/html/body/div[2]/div')
+    # other_window = driver.switch_to.window('alert_window')
+    # alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
+    # ref_text = driver.find_element_by_xpath('/html/body/div[2]/div/div[3]').text
+    # print(ref_text)
+    # alert_button.click()
 
-    # Successfull login:
-    # alert = driver.find_element_by_xpath('/html/body/div[2]/div/div[3]')
-    # ref_text = "Your registration was successful!"
-    # assert (alert_window == ref_text)
-    # print(alert_window.text)
+
+    # Login alert:
+    # alert = driver.switch_to.alert
+    # ref_text = driver.find_element_by_xpath('/html/body/div[2]/div/div[3]').text
     # time.sleep(2)
-    # alert_window.accept()  megnézzük,miután megnyomtuk, eltűnik-e
+    # alert.accept()
     # time.sleep(1)
+    # alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
+    # print(ref_text.text)
+    # alert_button.click()
 
-    # alert_window = driver.find_element_by_xpath('/html/body/div[2]/div').text
-    # ref_text = "Your registration was successful!"
-    # assert (alert_window == ref_text)
-    # print(alert_window.text)
-    # time.sleep(2)
-    # alert_window.accept()
+
 
     # xpath of the panel(alert window): /html/body/div[2]/div
     # text check: /html/body/div[2]/div/div[3] -> <div class="swal-text" style="">Your registration was successful!</div> ugyanebben van egy okgomb,akit accept-elni kell
 
-    # Checking right up the user tag exist
-    # def check_exists_by_xpath(xpath):
-    #     try:
-    #         driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a')
-    #     except NoSuchElementException:
-    #         return False
-    #     return True
 
-    #
-    # user_logged_in = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').text
-    # assert user_logged_in.text == f"{'username'}"
-    # # felső sarokban megjelenik a user
-    # <a href="#/@kiskakas/" class="nav-link">kiskakas</a>
-    # xpath: //*[@id="app"]/nav/div/ul/li[4]/a
 
 
 finally:
