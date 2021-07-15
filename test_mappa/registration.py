@@ -38,34 +38,24 @@ try:
         password.send_keys(pw)
         button.click()
 
-    fill_registration("kiskacsa5","kiskacsa5@gmail.com", "Kiskacsa5$")
+    fill_registration("kiskacsa24","kiskacsa24@gmail.com", "Kiskacsa24$")
 
-    # time.sleep(3)
-    # main_window = driver.window_handles[0]
-    # alert_window=driver.find_element_by_xpath('/html/body/div[2]/div')
-    # other_window = driver.switch_to.window('alert_window')
-    # alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
-    # ref_text = driver.find_element_by_xpath('/html/body/div[2]/div/div[3]').text
-    # print(ref_text)
-    # alert_button.click()
+    time.sleep(3)
+    alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
+    ref_text = driver.find_element_by_xpath('/html/body/div[2]/div/div[3]').text
+    print(ref_text)
+    # Checking correct alert messages coming...
+    alert_button.click()
 
-
-    # Login alert:
-    # alert = driver.switch_to.alert
-    # ref_text = driver.find_element_by_xpath('/html/body/div[2]/div/div[3]').text
-    # time.sleep(2)
-    # alert.accept()
-    # time.sleep(1)
-    # alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
-    # print(ref_text.text)
-    # alert_button.click()
-
-
-
-    # xpath of the panel(alert window): /html/body/div[2]/div
-    # text check: /html/body/div[2]/div/div[3] -> <div class="swal-text" style="">Your registration was successful!</div> ugyanebben van egy okgomb,akit accept-elni kell
-
-
+    # Checking registrated user name:
+    user_page=driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
+    time.sleep(2)
+    user_name=driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/h4').text
+    time.sleep(2)
+    print(driver.current_url)
+    print(user_name)
+    if driver.current_url== f"http://localhost:1667/#/@{user_name}/":
+        print("Registrated with correct user name")
 
 
 finally:
