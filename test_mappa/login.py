@@ -39,20 +39,19 @@ try:
 
     fill_login("kiskacsa5@gmail.com", "Kiskacsa5$")
 
-    # Checking right up the user tag exist
-    # def check_exists_by_xpath(xpath):
-    #     try:
-    #         driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a')
-    #     except NoSuchElementException:
-    #         return False
-    #     return True
+    time.sleep(3)
 
-    # Check user name:
-    # user_logged_in = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').text
-    # assert user_logged_in.text == f"{'username'}"
-    # # felső sarokban megjelenik a user
-    # <a href="#/@kiskakas/" class="nav-link">kiskakas</a>
-    # xpath: //*[@id="app"]/nav/div/ul/li[4]/a
+    # Checking right up the user tag exist
+    try:
+        user_page= driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
+        time.sleep(2)
+        user_name = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/h4').text
+        time.sleep(2)
+        print(driver.current_url)
+        if driver.current_url == f"http://localhost:1667/#/@{user_name}/":
+            print("Logged in with correct user name")
+    except NoSuchElementException:
+        print(False)
 
 finally:
     pass
