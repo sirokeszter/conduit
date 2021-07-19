@@ -1,9 +1,12 @@
+import pprint
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 import csv
 from selenium.webdriver.common.keys import Keys
 import time
+from selenium.common.exceptions import NoSuchElementException
 
 options = Options()
 # options.add_argument('--headless')
@@ -30,7 +33,7 @@ try:
         password.send_keys(pw)
         button.click()
 
-
+    username= "kiskacsa3"
     fill_login("kiskacsa3@gmail.com", "Kiskacsa3$")
 
     time.sleep(2)
@@ -48,34 +51,52 @@ try:
             article_title.send_keys(row[0])
             article_about.send_keys(row[1])
             article_content.send_keys(row[2])
-            article_tag.send_keys(row[4])
+            article_tag.send_keys(row[3])
             publish_button.click()
             time.sleep(2)
             driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a').click()
             time.sleep(1)
 
-        # time.sleep(2)
-        # new_article.click()
-        # time.sleep(1)
-        # article_title.send_keys(title)
-        # time.sleep(1)
-        # article_about.send_keys(about)
-        # time.sleep(1)
-        # article_content.send_keys(content)
-        # time.sleep(1)
-        # article_tag.send_keys(tag)
-        # time.sleep(1)
-        # publish_button.click()
+    my_articles=driver.find_element_by_xpath('//*[@id="app"]//div[2]//div[1]/ul/li[1]/a').click()
+    time.sleep(2)
 
-    # # creating a loop to do the procedure and append failed cases to the list
-    # with open('csvtext.csv') as csvfile:
-    #     csvreader = csv.reader(csvfile, delimiter=',')
-    #     for row in csvreader:
-    #         time.sleep(2)
-    #         new_article.click()
-    #         write_new_article(row[0], row[1], row[2], row[3])
+    feed_title_list = []
+    feed_about_list=[]
+    feed_content_list=[]
+    feed_tag_list=[]
 
+    page_count = 1
+
+    #def write_feed_data(title, about, content, tag):
+    while True:
+        time.sleep(2)
+        feed_titles = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/h1')
+        feed_abouts = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/p')
+
+        for title in feed_titles:
+            feed_title_list.append(title.text)
+        for about in (feed_abouts):
+            feed_about_list.append(about.text)
+
+        read_more_btn = driver.find_element_by_xpath('//*[@id="app"]//a/span').click()
+        feed_contents = driver.find_elements_by_xpath('//*[@id="app"]/div//p')
+        feed_tags = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/div/a')
+
+
+        for content in feed_contents:
+            feed_content_list.append(content.text)
+        for tag in feed_tags:
+            feed_tag_list.append(tag.text)
+        try:
+            page_count += 1
+            driver.find_element_by_link_text(str(page_count)).click()
+        except NoSuchElementException:
+            # Stop loop if no more page available
+            break
+
+    pprint.pprint(list(zip(feed_title_list[-2:], feed_about_list[-2:], feed_content_list[-2:], feed_tag_list[-2:])))
+
+    # Checking assertion in data
 
 finally:
-    pass
-    # driver.close()
+    driver.close()

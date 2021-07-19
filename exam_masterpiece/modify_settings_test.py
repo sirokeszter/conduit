@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.common.exceptions import NoSuchElementException
 import time
 import csv
 
@@ -30,8 +31,8 @@ try:
         password.send_keys(pw)
         button.click()
 
-
-    fill_login("kiskacsa7@gmail.com", "Kiskacsa7$")
+    username="kismajom3"
+    fill_login("kismajom3@gmail.com", "Kismajom3$")
 
     time.sleep(3)
 
@@ -62,23 +63,46 @@ try:
         update_button.click()
 
 
-    profile_edition("https://senior.hu/wp-content/uploads/2019/01/eltuntek-a-tyukok-6.jpg", "tyukanyo", "Anyám tyúkja", "tyukanyo@gmail.com", "Tyukanyo123$")
+    profile_edition("https://senior.hu/wp-content/uploads/2019/01/eltuntek-a-tyukok-6.jpg", "tyukocska", "Anyám tyúkja", "tyukocska@gmail.com", "Tyukocska123$")
 
     time.sleep(3)
     confirm_button = driver.find_element_by_xpath('/html/body/div[2]//button')
-    ref_text = driver.find_element_by_xpath('/html/body/div[2]/div/div[3]').text
+    ref_text = driver.find_element_by_xpath('/html/body/div[2]/div/div[2]').text
     print(ref_text)
-    # Checking correct alert messages coming...
+    # Checking correct alert messages
+    assert ref_text == 'Update successful!'
     confirm_button.click()
 
     # Checking modified user name:
-    user_page = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
+    time.sleep(2)
+    user_page1 = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
     time.sleep(2)
     user_name = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/h4').text
     time.sleep(2)
     print(driver.current_url)
-    if driver.current_url == f"http://localhost:1667/#/@{user_name}/":
+    if driver.current_url == f"http://localhost:1667/#/@{user_name}/" and user_name==username:
         print('The modified username is: ', f"{user_name}")
+
+    # Checking login with modified data:
+    logout = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[5]')
+    logout.click()
+    login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
+    time.sleep(2)
+    login.click()
+    time.sleep(2)
+    fill_login("tyukocska@gmail.com", "Tyukocska123$")
+    time.sleep(3)
+    confirm_button = driver.find_element_by_xpath('/html/body/div[2]//button')
+    try:
+        user_page = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
+        time.sleep(2)
+        user_name = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/h4').text
+        time.sleep(2)
+        print(driver.current_url)
+        if driver.current_url == f"http://localhost:1667/#/@{user_name}/" and user_name == username:
+            print("Logged in with correct user name")
+    except NoSuchElementException:
+        print("Registration failed!")
 
 finally:
     pass

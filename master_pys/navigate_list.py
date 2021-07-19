@@ -14,17 +14,10 @@ try:
     driver.get("http://localhost:1667/#/")
     # Cookie accept:
     button_accept = driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]').click()
-    from selenium.webdriver.common.action_chains import ActionChains
 
     # Activate Sign in input field:
     login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
-    mousehover = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
-    ActionChains(driver).move_to_element(mousehover).perform()
-    time.sleep(3)
-    actions = ActionChains(driver)
-    actions.click(login)
-    actions.perform()
-
+    login.click()
 
     # Fill input fields:
     def fill_login(mail, pw):
@@ -37,21 +30,27 @@ try:
         button.click()
 
 
-    fill_login("kiskacsa5@gmail.com", "Kiskacsa5$")
+    fill_login("kiskacsa3@gmail.com", "Kiskacsa3$")
 
     time.sleep(3)
+    feed_title_list = []
+    page_count = 1
 
-    # Checking right up the user tag exist
-    try:
-        user_page= driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
+    while True:
         time.sleep(2)
-        user_name = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/h4').text
-        time.sleep(2)
-        print(driver.current_url)
-        if driver.current_url == f"http://localhost:1667/#/@{user_name}/":
-            print("Logged in with correct user name")
-    except NoSuchElementException:
-        print(False)
+        feed_titles = driver.find_elements_by_xpath('//*[@id="app"]//a/h1')
+        for feed in feed_titles:
+            feed_title_list.append(feed.text)
+        try:
+            page_count += 1
+            driver.find_element_by_link_text(str(page_count)).click()
+        # driver.find_element_by_xpath('//*[@id="app"]//nav/ul/li[%]/a')
+        except NoSuchElementException:
+            # Stop loop if no more page available
+            break
+    print("The title-list of Global feeds: ", feed_title_list)
+    print("Number of Global feeds: ", len(feed_title_list))
+
 
 finally:
     pass
