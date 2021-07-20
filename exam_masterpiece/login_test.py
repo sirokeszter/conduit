@@ -41,18 +41,18 @@ def test_login():
 
         time.sleep(3)
 
-    # Checking right up the user tag exist
-    try:
-        user_page= driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
-        time.sleep(2)
-        user_name = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/h4').text
-        time.sleep(2)
-        print(driver.current_url)
-        if driver.current_url == f"http://localhost:1667/#/@{user_name}/" and user_name==username:
-            print("Logged in with correct user name")
-    except NoSuchElementException:
-        print(False)
+        # Checking right up the user tag exist
+        try:
+            user_page= driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
+            time.sleep(2)
+            user_name = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/h4').text
+            time.sleep(2)
+            print(driver.current_url)
+            if driver.current_url == f"http://localhost:1667/#/@{user_name}/" and user_name==username:
+                print("Logged in with correct user name")
+        except NoSuchElementException:
+            print(False)
 
 
-finally:
-    driver.close()
+    finally:
+        driver.close()

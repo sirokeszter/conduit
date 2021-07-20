@@ -38,7 +38,7 @@ def test_registration():
             button.click()
 
         # Registration with correct, non-existing data:
-        fill_registration("kismajom7","kismajom7@gmail.com", "Kismajom7$")
+        fill_registration("kiseger1","kiseger1@gmail.com", "Kiseger1$")
 
         time.sleep(3)
         alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
@@ -71,7 +71,7 @@ def test_registration():
 
         # Registration with correct, existing data:
         sign_up.click()
-        fill_registration("kismajom5","kismajom5@gmail.com", "Kismajom5$")
+        fill_registration("kiseger1","kiseger1@gmail.com", "Kiseger1$")
 
         time.sleep(3)
         alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
@@ -83,7 +83,7 @@ def test_registration():
         alert_button.click()
 
         # Registration with unformal email:
-        fill_registration("kismajom3","kismajom3", "Kismajom3$")
+        fill_registration("kiseger2","kiseger2", "Kiseger2$")
 
         time.sleep(3)
         alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
@@ -95,7 +95,7 @@ def test_registration():
         alert_button.click()
 
      # Registration with unformal password:
-        fill_registration("kismajom65","kismajom65@gmail.com", "kismajom")
+        fill_registration("kiseger3","kiseger3@gmail.com", "kiseger")
 
         time.sleep(3)
         alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')

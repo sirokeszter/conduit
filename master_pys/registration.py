@@ -38,7 +38,7 @@ try:
         button.click()
 
     # Registration with correct, non-existing data:
-    fill_registration("kismajom7","kismajom7@gmail.com", "Kismajom7$")
+    fill_registration("kiskakas2","kiskakas2@gmail.com", "Kiskakas2$")
 
     time.sleep(3)
     alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
@@ -71,7 +71,7 @@ try:
 
     # Registration with correct, existing data:
     sign_up.click()
-    fill_registration("kismajom5","kismajom5@gmail.com", "Kismajom5$")
+    fill_registration("kiskakas2","kiskakas2@gmail.com", "Kiskakas2$")
 
     time.sleep(3)
     alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')

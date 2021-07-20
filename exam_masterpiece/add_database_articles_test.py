@@ -67,34 +67,49 @@ def test_add_database_articles():
 
         page_count = 1
 
-        #def write_feed_data(title, about, content, tag):
+        # def write_feed_data(title, about, tag):
+        #     return(feed_data_list)
+        #     # feed_titles = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/h1')
+        #     # feed_abouts = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/p')
+        #     # feed_tags = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/div/a')
+        #     # read_more_btn = driver.find_elements_by_xpath('//*[@id="app"]//a/span')
+        #     # feed_contents = driver.find_elements_by_xpath('//*[@id="app"]/div//p')
+        #
+        # feed_data_list=[]
+        # my_feeds=driver.find_elements_by_xpath('//*[@id="app"]/div/div[2]/div/div/div[2]/div/div/div[1]/a')
+        # for write_feed_data in range(len(my_feeds)):
+        #     feed_data_list.append(write_feed_data)
+
         while True:
             time.sleep(2)
             feed_titles = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/h1')
             feed_abouts = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/p')
-
+            feed_tags = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/div/a')
             for title in feed_titles:
                 feed_title_list.append(title.text)
             for about in (feed_abouts):
                 feed_about_list.append(about.text)
-
-            read_more_btn = driver.find_element_by_xpath('//*[@id="app"]//a/span').click()
-            feed_contents = driver.find_elements_by_xpath('//*[@id="app"]/div//p')
-            feed_tags = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/div/a')
-
-
-            for content in feed_contents:
-                feed_content_list.append(content.text)
             for tag in feed_tags:
                 feed_tag_list.append(tag.text)
+
+            # read_more_btn = driver.find_element_by_xpath('//*[@id="app"]//a/span').click()
+            # feed_contents = driver.find_elements_by_xpath('//*[@id="app"]/div//p')
+            read_more_btns = driver.find_elements_by_xpath('//*[@id="app"]//a/span')
+            for rm_btn in read_more_btns:
+                rm_btn.click()
+                time.sleep(2)
+                feed_content = driver.find_element_by_xpath('//*[@id="app"]//p')
+                feed_content_list.append(feed_content.text)
+                time.sleep(2)
+                feed_author = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/a').click()
+                break
+
             try:
                 page_count += 1
                 driver.find_element_by_link_text(str(page_count)).click()
             except NoSuchElementException:
                 # Stop loop if no more page available
                 break
-
-        pprint.pprint(list(zip(feed_title_list[-2:], feed_about_list[-2:], feed_content_list[-2:], feed_tag_list[-2:])))
 
         # Checking assertion in data
 

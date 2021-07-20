@@ -31,8 +31,8 @@ try:
         password.send_keys(pw)
         button.click()
 
-    username="kismajom3"
-    fill_login("kismajom3@gmail.com", "Kismajom3$")
+    username="kismajom2"
+    fill_login("kismajom2@gmail.com", "Kismajom2$")
 
     time.sleep(3)
 
@@ -102,7 +102,7 @@ try:
         if driver.current_url == f"http://localhost:1667/#/@{user_name}/" and user_name == username:
             print("Logged in with correct user name")
     except NoSuchElementException:
-        print("Registration failed!")
+        print("Error: ",driver.find_element_by_xpath('/html/body/div[2]/div/div[2]').text, driver.find_element_by_xpath('/html/body/div[2]/div/div[3]').text)
 
 finally:
     pass
