@@ -95,8 +95,6 @@ try:
         for tag in feed_tags:
             feed_tag_list.append(tag.text)
 
-        #read_more_btn = driver.find_element_by_xpath('//*[@id="app"]//a/span').click()
-        #feed_contents = driver.find_elements_by_xpath('//*[@id="app"]/div//p')
         read_more_btns = driver.find_elements_by_xpath('//*[@id="app"]//a/span')
         for rm_btn in read_more_btns:
             rm_btn.click()
@@ -106,7 +104,22 @@ try:
             time.sleep(2)
             feed_author = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/a').click()
             break
-
+        # while True:
+        #     my_feeds = driver.find_elements_by_xpath('//*[@id="app"]/div/div[2]/div/div/div[2]/div/div/div[1]/a')
+        #     read_more_btns = driver.find_elements_by_xpath('//*[@id="app"]//a/span')
+        #     for i in range(len(my_feeds)):
+        #         for rm_btn in read_more_btns:
+        #             rm_btn.click()
+        #             time.sleep(2)
+        #             feed_content = driver.find_element_by_xpath('//*[@id="app"]//p')
+        #             feed_content_list.append(feed_content.text)
+        #             time.sleep(2)
+        #             feed_author = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/a').click()
+        #     try:
+        #         len(my_feeds)[i] += 1
+        #     except NoSuchElementException:
+        #         # Stop loop if no more page available
+        #         break
         try:
             page_count += 1
             driver.find_element_by_link_text(str(page_count)).click()
