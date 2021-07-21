@@ -95,15 +95,15 @@ try:
         for tag in feed_tags:
             feed_tag_list.append(tag.text)
 
-        read_more_btns = driver.find_elements_by_xpath('//*[@id="app"]//a/span')
-        for rm_btn in read_more_btns:
-            rm_btn.click()
-            time.sleep(2)
-            feed_content = driver.find_element_by_xpath('//*[@id="app"]//p')
-            feed_content_list.append(feed_content.text)
-            time.sleep(2)
-            feed_author = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/a').click()
-            break
+        # read_more_btns = driver.find_elements_by_xpath('//*[@id="app"]//a/span')
+        # for rm_btn in read_more_btns:
+        #     rm_btn.click()
+        #     time.sleep(2)
+        #     feed_content = driver.find_element_by_xpath('//*[@id="app"]//p')
+        #     feed_content_list.append(feed_content.text)
+        #     time.sleep(2)
+        #     feed_author = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/a').click()
+        #     break
         # while True:
         #     my_feeds = driver.find_elements_by_xpath('//*[@id="app"]/div/div[2]/div/div/div[2]/div/div/div[1]/a')
         #     read_more_btns = driver.find_elements_by_xpath('//*[@id="app"]//a/span')
