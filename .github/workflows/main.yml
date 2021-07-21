@@ -1,5 +1,5 @@
 
-name: Conduit test
+name: Pytest_conduit
 
 on:
   push:
@@ -14,35 +14,41 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-            
-    - name: Start conduit
+    
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with: 
+         python-version: 3.8
+         
+    - name: Install dependencies
       run: |
-        docker-compose up -d
-   
-    - name: install Nodejs
-      uses: actions/setup-node@v2
-      with:
-         node-version: '14'
-   
-    - name: Install Selenium Side Runner
-      run: |
-        npm install -g selenium-side-runner
+        python -m pip install --upgrade pip
+        if [ -f exam_masterpiece/requirements.txt ]; then pip install -r exam_masterpiece/requirements.txt; fi
     
     - name: Install Chrome
       run: |
-        sudo apt install google-chrome-stable 
-        
-    - name: Install seleniumbase
-      run: pip install seleniumbase
+        sudo apt install google-chrome-stable
+    - run: docker-compose up -d
     
-    - name: Install chromedriver
-      run: |
-        seleniumbase install chromedriver
-    
-    - name: Sleep for 30 seconds
-      run: sleep 30s
+    - name: Sleep for 45 seconds
+      run: sleep 45s
       shell: bash
     
+    - name: Test with pytest
+      run: |
+        pytest
+    
+    - name: Collect docker logs
+      uses: jwalton/gh-docker-logs@v1
+      with:
+       dest: './logs'
+    
+    - name: Archive execution artifacts
+      uses: actions/upload-artifact@v2
+      with:
+       name: docker-logs
+       path: ./logs
+        
     - name: Run Tests
       run: |
         selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" ./seleniumide-tests/post.side --alluredir=allure-results
