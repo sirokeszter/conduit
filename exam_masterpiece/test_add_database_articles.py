@@ -9,7 +9,7 @@ def test_add_database_articles():
     from selenium.common.exceptions import NoSuchElementException
 
     options = Options()
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)
 
@@ -33,8 +33,8 @@ def test_add_database_articles():
             password.send_keys(pw)
             button.click()
 
-        username= "kiskacsa3"
-        fill_login("kiskacsa3@gmail.com", "Kiskacsa3$")
+        username= "kiscica1"
+        fill_login("kiscica1@gmail.com", "Kiscica1$")
 
         time.sleep(2)
         new_article = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a').click()
@@ -62,7 +62,6 @@ def test_add_database_articles():
 
         feed_title_list = []
         feed_about_list=[]
-        feed_content_list=[]
         feed_tag_list=[]
 
         page_count = 1
@@ -79,16 +78,6 @@ def test_add_database_articles():
             for tag in feed_tags:
                 feed_tag_list.append(tag.text)
 
-            # read_more_btns = driver.find_elements_by_xpath('//*[@id="app"]//a/span')
-            # for rm_btn in read_more_btns:
-            #     rm_btn.click()
-            #     time.sleep(2)
-            #     feed_content = driver.find_element_by_xpath('//*[@id="app"]//p')
-            #     feed_content_list.append(feed_content.text)
-            #     time.sleep(2)
-            #     feed_author = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/a').click()
-            #     break
-
             try:
                 page_count += 1
                 driver.find_element_by_link_text(str(page_count)).click()
@@ -99,6 +88,11 @@ def test_add_database_articles():
         pprint.pprint(list(zip(feed_title_list[-2:], feed_about_list[-2:], feed_tag_list[-2:])))
 
         # Checking assertion in data
+        csv_title_list=[]
+        with open('csvtext.csv',encoding='utf-8') as csvfile:
+            csvreader = csv.reader(csvfile, delimiter=',')
+            for row in csvreader:
+                csv_title_list.append(row[0])
 
     finally:
         driver.close()

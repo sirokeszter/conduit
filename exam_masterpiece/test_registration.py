@@ -6,7 +6,7 @@ def test_registration():
     import time
 
     options = Options()
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)
 
@@ -38,7 +38,7 @@ def test_registration():
             button.click()
 
         # Registration with correct, non-existing data:
-        fill_registration("kiseger1","kiseger1@gmail.com", "Kiseger1$")
+        fill_registration("kiskakas1","kiskakas1@gmail.com", "Kiskakas1$")
 
         time.sleep(3)
         alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
@@ -71,7 +71,7 @@ def test_registration():
 
         # Registration with correct, existing data:
         sign_up.click()
-        fill_registration("kiseger1","kiseger1@gmail.com", "Kiseger1$")
+        fill_registration("kiskakas1","kiskakas1@gmail.com", "Kiskakas1$")
 
         time.sleep(3)
         alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
@@ -83,7 +83,7 @@ def test_registration():
         alert_button.click()
 
         # Registration with unformal email:
-        fill_registration("kiseger2","kiseger2", "Kiseger2$")
+        fill_registration("kiskakas2","kiskakas2", "Kiskakas2$")
 
         time.sleep(3)
         alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
@@ -95,7 +95,7 @@ def test_registration():
         alert_button.click()
 
      # Registration with unformal password:
-        fill_registration("kiseger3","kiseger3@gmail.com", "kiseger")
+        fill_registration("kiskakas2","kiskakas2@gmail.com", "kiskakas")
 
         time.sleep(3)
         alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')

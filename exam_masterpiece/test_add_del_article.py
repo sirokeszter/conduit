@@ -4,10 +4,9 @@ def test_add_del_article():
     from webdriver_manager.chrome import ChromeDriverManager
     from selenium.common.exceptions import NoSuchElementException
     import time
-    import csv
 
     options = Options()
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)
 
@@ -21,7 +20,6 @@ def test_add_del_article():
         login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
         login.click()
 
-
         # Fill input fields:
         def fill_login(mail, pw):
             email = driver.find_element_by_xpath('//*[@id="app"]//fieldset[1]/input')
@@ -32,15 +30,13 @@ def test_add_del_article():
             password.send_keys(pw)
             button.click()
 
-
-        username = "lovacska1"
-        fill_login("lovacska1@gmail.com", "Lovacska1$")
+        username = "kiskakas10"
+        fill_login("kiskakas10@gmail.com", "Kiskakas10$")
 
         time.sleep(2)
 
         new_article = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a').click()
         time.sleep(2)
-
 
         def write_new_article(title, about, content, tag):
             article_title = driver.find_element_by_xpath('//*[@id="app"]//fieldset[1]/input')
@@ -56,7 +52,7 @@ def test_add_del_article():
             publish_button.click()
 
         # Write a new article:
-        write_new_article("Valami", "Valamiről", "Valami a valamiről", "valami")
+        write_new_article("Kakasmese", "Kakasról", "Egyszer volt", "kakas")
 
         # checking the elements of the new article:
         time.sleep(1)
@@ -65,7 +61,6 @@ def test_add_del_article():
 
         feed_title_list = []
         feed_about_list = []
-        feed_content_list = []
         feed_tag_list = []
 
         page_count = 1
@@ -73,8 +68,6 @@ def test_add_del_article():
         article_box = driver.find_elements_by_xpath('//*[@id="app"]//div[@class="article-preview"]')
         feed_titles = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/h1')
         feed_abouts = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/p')
-        read_more_btns = driver.find_elements_by_xpath('//*[@id="app"]//a/span')
-        feed_contents = driver.find_element_by_xpath('//*[@id="app"]/div//p')
         feed_tags = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/div/a')
 
         time.sleep(2)
@@ -95,19 +88,27 @@ def test_add_del_article():
 
         print(feed_title_list[-1:], feed_about_list[-1:], feed_tag_list[-1:])
 
-        assert feed_title_list[-1] == 'Valami'
-        assert feed_about_list[-1] == 'Valamiről'
-        assert feed_tag_list[-1] == 'valami'
+        assert feed_title_list[-1] == 'Kakasmese'
+        assert feed_about_list[-1] == 'Kakasról'
+        assert feed_tag_list[-1] == 'kakas'
 
-        #Testing feed delete function:
+        # Testing feed delete function:
         time.sleep(1)
         my_articles1 = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
         feed_titles1 = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/h1')
         feed_titles1[-1].click()
         time.sleep(1)
-        del_btn=driver.find_element_by_xpath('//*[@id="app"]//button/span').click()
+        del_btn = driver.find_element_by_xpath('//*[@id="app"]//button/span').click()
         time.sleep(1)
 
+        # Collect the new list after deleting:
+        mod_feed_title_list = []
+        feed_titles_mod = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/h1')
+        for title in feed_titles_mod:
+            mod_feed_title_list.append(title.text)
+
+        # Checking the deleted feed not exist with the len of feed_title_list (before-after):
+        assert int(len(feed_title_list)) - 1 == int(len(mod_feed_title_list))
 
     finally:
         driver.close()

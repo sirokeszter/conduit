@@ -6,7 +6,7 @@ def test_modify_settings():
     import time
 
     options = Options()
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)
 
@@ -31,8 +31,8 @@ def test_modify_settings():
             password.send_keys(pw)
             button.click()
 
-        username="kismajom3"
-        fill_login("kismajom3@gmail.com", "Kismajom3$")
+        username="kiskacsa1"
+        fill_login("kiskacsa1@gmail.com", "Kiskacsa1$")
 
         time.sleep(3)
 
@@ -63,7 +63,7 @@ def test_modify_settings():
             update_button.click()
 
 
-        profile_edition("https://senior.hu/wp-content/uploads/2019/01/eltuntek-a-tyukok-6.jpg", "tyukocska", "Anyám tyúkja", "tyukocska@gmail.com", "Tyukocska123$")
+        profile_edition("https://senior.hu/wp-content/uploads/2019/01/eltuntek-a-tyukok-6.jpg", "tyukocska1", "Anyám tyúkja", "tyukocska1@gmail.com", "Tyukocska1$")
 
         time.sleep(3)
         confirm_button = driver.find_element_by_xpath('/html/body/div[2]//button')
@@ -90,7 +90,7 @@ def test_modify_settings():
         time.sleep(2)
         login.click()
         time.sleep(2)
-        fill_login("tyukocska@gmail.com", "Tyukocska123$")
+        fill_login("tyukocska1@gmail.com", "Tyukocska1$")
         time.sleep(3)
         confirm_button = driver.find_element_by_xpath('/html/body/div[2]//button')
 

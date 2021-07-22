@@ -7,7 +7,7 @@ def test_favorite_feed_list():
     import csv
 
     options = Options()
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)
 
@@ -32,8 +32,8 @@ def test_favorite_feed_list():
             password.send_keys(pw)
             button.click()
 
-        username="kiskacsa3"
-        fill_login("kiskacsa3@gmail.com", "Kiskacsa3$")
+        username="kiskakas1"
+        fill_login("kiskakas1@gmail.com", "Kiskakas1$")
 
         time.sleep(3)
         like_btns=driver.find_elements_by_xpath('//*[@id="app"]//button/i')
@@ -44,8 +44,7 @@ def test_favorite_feed_list():
             else:
                 break
 
-        # for counter in like_counters[:3]:
-        #     assert counter.text==1
+        # Favorize articles:
         article_list=[]
         time.sleep(2)
         user_page = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
@@ -57,6 +56,7 @@ def test_favorite_feed_list():
             article_list.append(article.text)
         print(article_list)
 
+        # Choose the first three articles from the global feeds, and like them, then print into a list:
         home=driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[1]/a').click()
         time.sleep(1)
         liked_list=[]
@@ -65,7 +65,8 @@ def test_favorite_feed_list():
             liked_list.append(liked_feed.text)
 
         print(liked_list)
-        # Checking identity of liked feeds fromglobal feeds and favorite feeds and the number of checked feeds:
+
+        # Checking identity of liked feeds from global feeds and favorite feeds and the number of checked feeds:
         assert liked_list == article_list
         assert len(article_list) ==3
 
