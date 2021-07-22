@@ -54,7 +54,7 @@ def test_add_del_article():
         # Write a new article:
         write_new_article("Kakasmese", "Kakasról", "Egyszer volt", "kakas")
 
-        # checking the elements of the new article:
+        # Checking the elements (title, about, tag) of the new article:
         time.sleep(1)
         my_articles = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
         time.sleep(2)

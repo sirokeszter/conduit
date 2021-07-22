@@ -30,7 +30,7 @@ def test_paging_feedlist():
             button.click()
 
 
-        fill_login("kiskacsa3@gmail.com", "Kiskacsa3$")
+        fill_login("kiskakas1@gmail.com", "Kiskakas1$")
 
         time.sleep(3)
         feed_title_list = []
@@ -48,8 +48,26 @@ def test_paging_feedlist():
             except NoSuchElementException:
                 # Stop loop if no more page available
                 break
+
         print("The title-list of Global feeds: ", feed_title_list)
         print("Number of Global feeds: ", len(feed_title_list))
+
+        # Writting to csv file:
+        with open('titles.csv', 'w', encoding='utf-8') as file:
+            file.write(f'{feed_title_list}')
+
+        # Count the number of the saved titles in the csv file:
+        csv_title_list = []
+        with open('titles.csv', 'r', encoding='utf-8') as csvfile:
+            csvreader = csv.reader(csvfile, delimiter=',')
+            for row in csvreader:
+                csv_title_list.append(row)
+
+        # print(len(csv_title_list))
+
+        # Comparing the number of the saved titles with number of the Global feed titles:
+        assert int(len(feed_title_list)) == int(len(csv_title_list))
+
 
 
     finally:

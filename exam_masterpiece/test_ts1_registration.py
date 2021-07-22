@@ -3,6 +3,7 @@ def test_registration():
     from selenium.webdriver.chrome.options import Options
     from webdriver_manager.chrome import ChromeDriverManager
     from selenium.common.exceptions import NoSuchElementException
+    from selenium.webdriver.common.action_chains import ActionChains
     import time
 
     options = Options()
@@ -10,11 +11,21 @@ def test_registration():
     options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)
 
+
     try:
         driver.get("http://localhost:1667/")
+
         # Cookie accept:
         button_accept = driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]').click()
-        from selenium.webdriver.common.action_chains import ActionChains
+
+        def check_non_exists_by_xpath(xpath):
+            try:
+                driver.find_element_by_xpath(xpath)
+            except NoSuchElementException:
+                return True
+            return False
+
+        check_non_exists_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]')
 
         # Activate Sign in input field
         sign_up = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[3]')

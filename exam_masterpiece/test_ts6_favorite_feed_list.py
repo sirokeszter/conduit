@@ -13,6 +13,7 @@ def test_favorite_feed_list():
 
     try:
         driver.get("http://localhost:1667/#/")
+
         # Cookie accept:
         button_accept = driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]').click()
 
@@ -20,7 +21,6 @@ def test_favorite_feed_list():
         login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
         time.sleep(3)
         login.click()
-
 
         # Fill input fields:
         def fill_login(mail, pw):
