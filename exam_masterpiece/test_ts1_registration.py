@@ -15,7 +15,7 @@ def test_registration():
     try:
         driver.get("http://localhost:1667/")
 
-        # Activate Sign in input field
+        # Activate Sign up input field
         sign_up = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[3]')
         mousehover = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[3]/a')
         ActionChains(driver).move_to_element(mousehover).perform()
