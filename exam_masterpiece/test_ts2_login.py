@@ -3,6 +3,7 @@ def test_login():
     from selenium.webdriver.chrome.options import Options
     from webdriver_manager.chrome import ChromeDriverManager
     from selenium.common.exceptions import NoSuchElementException
+    from selenium.webdriver.common.action_chains import ActionChains
     import time
 
     options = Options()

@@ -4,6 +4,7 @@ def test_paging_feedlist():
     from webdriver_manager.chrome import ChromeDriverManager
     from selenium.common.exceptions import NoSuchElementException
     import time
+    import csv
 
     options = Options()
     options.add_argument('--headless')
