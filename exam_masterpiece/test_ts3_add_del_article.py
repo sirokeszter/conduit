@@ -13,10 +13,7 @@ def test_add_del_article():
     try:
         driver.get("http://localhost:1667/")
 
-        # Cookie accept:
-        button_accept = driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]').click()
-
-        # Activate Sign in input field:
+        # Sign in:
         login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
         login.click()
 
@@ -30,8 +27,8 @@ def test_add_del_article():
             password.send_keys(pw)
             button.click()
 
-        username = "kiskakas10"
-        fill_login("kiskakas10@gmail.com", "Kiskakas10$")
+        username = "kiskakas1"
+        fill_login("kiskakas1@gmail.com", "Kiskakas1$")
 
         time.sleep(2)
 

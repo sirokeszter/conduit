@@ -12,8 +12,6 @@ def test_modify_settings():
 
     try:
         driver.get("http://localhost:1667/#/")
-        # Cookie accept:
-        button_accept = driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]').click()
 
         # Activate Sign in input field:
         login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
@@ -31,8 +29,8 @@ def test_modify_settings():
             password.send_keys(pw)
             button.click()
 
-        username="kiskacsa1"
-        fill_login("kiskacsa1@gmail.com", "Kiskacsa1$")
+        username="kiskakas1"
+        fill_login("kiskakas1@gmail.com", "Kiskakas1$")
 
         time.sleep(3)
 

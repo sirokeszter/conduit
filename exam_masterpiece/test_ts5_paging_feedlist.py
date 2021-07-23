@@ -12,8 +12,6 @@ def test_paging_feedlist():
 
     try:
         driver.get("http://localhost:1667/#/")
-        # Cookie accept:
-        button_accept = driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]').click()
 
         # Activate Sign in input field:
         login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')

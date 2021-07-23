@@ -15,18 +15,6 @@ def test_registration():
     try:
         driver.get("http://localhost:1667/")
 
-        # Cookie accept:
-        button_accept = driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]').click()
-
-        def check_non_exists_by_xpath(xpath):
-            try:
-                driver.find_element_by_xpath(xpath)
-            except NoSuchElementException:
-                return True
-            return False
-
-        check_non_exists_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]')
-
         # Activate Sign in input field
         sign_up = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[3]')
         mousehover = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[3]/a')
