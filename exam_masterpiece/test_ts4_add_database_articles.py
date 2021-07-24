@@ -80,7 +80,7 @@ def test_add_database_articles():
 
         # Create a list from the feed's titles in csv:
         csv_title_count = 0
-        with open('csvtext.csv', encoding='utf-8') as csvfile:
+        with open('csvtext.csv', 'r', encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
             for row in csvreader:
                 csv_title_count += 1
