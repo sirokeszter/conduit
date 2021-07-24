@@ -52,22 +52,16 @@ def test_paging_feedlist():
         print("Number of Global feeds: ", len(feed_title_list))
 
         # Writting to csv file:
+        feed_count = 0
         with open('titles.csv', 'w', encoding='utf-8') as file:
-            file.write(f'{feed_title_list}')
+            for title in feed_title_list:
+                file.write(f'{feed_title_list}')
+                feed_count += 1
 
-        # Count the number of the saved titles in the csv file:
-        csv_title_list = []
-        with open('titles.csv', 'r', encoding='utf-8') as csvfile:
-            csvreader = csv.reader(csvfile, delimiter=',')
-            for row in csvreader:
-                csv_title_list.append(row)
-
-        # print(len(csv_title_list))
+        print(feed_count)
 
         # Comparing the number of the saved titles with number of the Global feed titles:
-        assert int(len(feed_title_list)) == int(len(csv_title_list))
-
-
+        assert int(len(feed_title_list)) == int(feed_count)
 
     finally:
         driver.close()

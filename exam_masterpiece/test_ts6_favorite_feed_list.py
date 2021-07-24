@@ -33,16 +33,14 @@ def test_favorite_feed_list():
         fill_login("kiskakas1@gmail.com", "Kiskakas1$")
 
         time.sleep(3)
-        like_btns=driver.find_elements_by_xpath('//*[@id="app"]//button/i')
-        like_counters=driver.find_elements_by_xpath('//*[@id="app"]//button/span')
-        for like in like_btns:
-            if len(like_btns)< 3:
-                like.click()
-            else:
-                break
+        like_btns = driver.find_elements_by_xpath('//*[@id="app"]//button/i')
+        # like_counters = driver.find_elements_by_xpath('//*[@id="app"]//button/span/[text="1"]')
+        for like in like_btns[0:3]:
+            like.click()
+            time.sleep(1)
 
-        # Favorize articles:
-        article_list=[]
+        # Favorized articles:
+        article_list = []
         time.sleep(2)
         user_page = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
         time.sleep(2)
@@ -51,21 +49,21 @@ def test_favorite_feed_list():
         articles = driver.find_elements_by_xpath('//*[@id="app"]//a/h1')
         for article in articles:
             article_list.append(article.text)
+
         print(article_list)
 
         # Choose the first three articles from the global feeds, and like them, then print into a list:
-        home=driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[1]/a').click()
+        home = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[1]/a').click()
         time.sleep(1)
-        liked_list=[]
-        global_feeds=driver.find_elements_by_xpath('//*[@id="app"]//a/h1')
-        for liked_feed in global_feeds[:3]:
+        liked_list = []
+        global_feeds = driver.find_elements_by_xpath('//*[@id="app"]//a/h1')
+        for liked_feed in global_feeds[0:3]:
             liked_list.append(liked_feed.text)
-
         print(liked_list)
 
         # Checking identity of liked feeds from global feeds and favorite feeds and the number of checked feeds:
         assert liked_list == article_list
-        assert len(article_list) ==3
+        assert len(article_list) == 3
 
     finally:
         driver.close()

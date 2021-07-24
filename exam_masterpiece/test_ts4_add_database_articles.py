@@ -1,5 +1,4 @@
 def test_add_database_articles():
-    import pprint
 
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
@@ -31,8 +30,8 @@ def test_add_database_articles():
             password.send_keys(pw)
             button.click()
 
-        username= "kiscica1"
-        fill_login("kiscica1@gmail.com", "Kiscica1$")
+        username= "kiskakas1"
+        fill_login("kiskakas1@gmail.com", "Kiskakas1$")
 
         time.sleep(2)
         new_article = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a').click()
@@ -43,7 +42,7 @@ def test_add_database_articles():
         article_tag = driver.find_element_by_xpath('//*[@id="app"]//fieldset[4]//input')
         publish_button = driver.find_element_by_xpath('//*[@id="app"]//form/button')
 
-        with open('csvtext.csv',encoding='utf-8') as csvfile:
+        with open('csvtext.csv', encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
             for row in csvreader:
                 article_title.send_keys(row[0])
@@ -55,26 +54,20 @@ def test_add_database_articles():
                 driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a').click()
                 time.sleep(1)
 
-        my_articles=driver.find_element_by_xpath('//*[@id="app"]//div[2]//div[1]/ul/li[1]/a').click()
+            # Comparing the imported data from csv with the new posts' data:
+        user_feeds = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
         time.sleep(2)
+        # my_articles = driver.find_element_by_xpath('//*[@id="app"]//div[2]//div[1]/ul/li[1]/a').click()
+        # time.sleep(2)
 
         feed_title_list = []
-        feed_about_list=[]
-        feed_tag_list=[]
-
         page_count = 1
 
         while True:
             time.sleep(2)
             feed_titles = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/h1')
-            feed_abouts = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/p')
-            feed_tags = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/div/a')
             for title in feed_titles:
                 feed_title_list.append(title.text)
-            for about in (feed_abouts):
-                feed_about_list.append(about.text)
-            for tag in feed_tags:
-                feed_tag_list.append(tag.text)
 
             try:
                 page_count += 1
@@ -83,14 +76,19 @@ def test_add_database_articles():
                 # Stop loop if no more page available
                 break
 
-        pprint.pprint(list(zip(feed_title_list[-2:], feed_about_list[-2:], feed_tag_list[-2:])))
+        print(feed_title_list)
 
-        # Checking assertion in data
-        csv_title_list=[]
-        with open('csvtext.csv',encoding='utf-8') as csvfile:
+        # Create a list from the feed's titles in csv:
+        csv_title_count = 0
+        with open('csvtext.csv', encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
             for row in csvreader:
-                csv_title_list.append(row[0])
+                csv_title_count += 1
+
+        print(csv_title_count)
+
+        # Checking assertion by number of rows:
+        assert csv_title_count == len(feed_title_list)
 
     finally:
         driver.close()
