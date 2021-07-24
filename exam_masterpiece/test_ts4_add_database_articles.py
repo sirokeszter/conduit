@@ -19,7 +19,6 @@ def test_add_database_articles():
         login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
         login.click()
 
-
         # Fill input fields:
         def fill_login(mail, pw):
             email = driver.find_element_by_xpath('//*[@id="app"]//fieldset[1]/input')
@@ -42,7 +41,7 @@ def test_add_database_articles():
         article_tag = driver.find_element_by_xpath('//*[@id="app"]//fieldset[4]//input')
         publish_button = driver.find_element_by_xpath('//*[@id="app"]//form/button')
 
-        with open('csvtext.csv', 'r', encoding='utf-8') as csvfile:
+        with open('test.csv', 'r', encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
             for row in csvreader:
                 article_title.send_keys(row[0])
@@ -54,11 +53,9 @@ def test_add_database_articles():
                 driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a').click()
                 time.sleep(1)
 
-            # Comparing the imported data from csv with the new posts' data:
+        # Comparing the imported data from csv with the new posts' data:
         user_feeds = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
         time.sleep(2)
-        # my_articles = driver.find_element_by_xpath('//*[@id="app"]//div[2]//div[1]/ul/li[1]/a').click()
-        # time.sleep(2)
 
         feed_title_list = []
         page_count = 1
@@ -80,7 +77,7 @@ def test_add_database_articles():
 
         # Create a list from the feed's titles in csv:
         csv_title_count = 0
-        with open('csvtext.csv', 'r', encoding='utf-8') as csvfile:
+        with open('test.csv', 'r', encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
             for row in csvreader:
                 csv_title_count += 1
