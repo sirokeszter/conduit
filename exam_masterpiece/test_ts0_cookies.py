@@ -12,12 +12,12 @@ def test_cookies():
 
     try:
         driver.get("http://localhost:1667/")
-        time.sleep(15)
+        time.sleep(10)
         # Cookie accept with click accept button:
         accept_button = driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]')
-        time.sleep(2)
+        time.sleep(4)
         accept_button.click()
-        time.sleep(2)
+        time.sleep(4)
 
         # Decline button:
         # button_decline=driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[1]/div)
@@ -30,9 +30,9 @@ def test_cookies():
                 return True
             return False
 
-        time.sleep(6)
+        time.sleep(5)
         check_non_exists_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]')
-        time.sleep(2)
+        time.sleep(5)
 
     finally:
         driver.close()
