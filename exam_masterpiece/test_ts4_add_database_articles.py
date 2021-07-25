@@ -1,6 +1,5 @@
 def test_add_database_articles():
     import sys
-    sys.path.append(r'E:\conduit\exam_masterpiece')
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
     from webdriver_manager.chrome import ChromeDriverManager
@@ -43,6 +42,7 @@ def test_add_database_articles():
         article_tag = driver.find_element_by_xpath('//*[@id="app"]//fieldset[4]//input')
         publish_button = driver.find_element_by_xpath('//*[@id="app"]//form/button')
 
+        sys.path.append(r'E:\conduit\exam_masterpiece')
         with open('test.csv', 'r', encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
             for row in csvreader:
