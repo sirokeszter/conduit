@@ -12,6 +12,7 @@ def test_add_del_article():
 
     try:
         driver.get("http://localhost:1667/")
+        time.sleep(2)
 
         # Sign in:
         login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')

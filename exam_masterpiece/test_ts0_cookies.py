@@ -3,6 +3,7 @@ def test_cookies():
     from selenium.webdriver.chrome.options import Options
     from webdriver_manager.chrome import ChromeDriverManager
     from selenium.common.exceptions import NoSuchElementException
+    import time
 
     options = Options()
     options.add_argument('--headless')
@@ -11,6 +12,7 @@ def test_cookies():
 
     try:
         driver.get("http://localhost:1667/")
+        time.sleep(2)
         # Cookie accept with click accept button:
         driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]').click()
 

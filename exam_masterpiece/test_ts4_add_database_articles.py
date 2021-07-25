@@ -14,6 +14,7 @@ def test_add_database_articles():
 
     try:
         driver.get("http://localhost:1667/")
+        time.sleep(2)
 
         # Activate Sign in input field:
         login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
