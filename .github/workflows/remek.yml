@@ -27,6 +27,7 @@ jobs:
     - name: Install Chrome
       run: |
         sudo apt install google-chrome-stable
+    
     - run: docker-compose up -d
     
     - name: Sleep for 45 seconds
