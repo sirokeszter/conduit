@@ -13,8 +13,8 @@ def test_add_database_articles():
     driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)
 
     try:
-        driver.get("http://localhost:1667/")
-        time.sleep(2)
+        driver.get("http://localhost:1667/#")
+        time.sleep(10)
 
         # Activate Sign in input field:
         login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
@@ -33,7 +33,7 @@ def test_add_database_articles():
         username= "kiskakas1"
         fill_login("kiskakas1@gmail.com", "Kiskakas1$")
 
-        time.sleep(2)
+        time.sleep(3)
         new_article = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a').click()
         time.sleep(2)
         article_title = driver.find_element_by_xpath('//*[@id="app"]//fieldset[1]/input')

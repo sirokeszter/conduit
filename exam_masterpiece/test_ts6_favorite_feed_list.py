@@ -13,7 +13,7 @@ def test_favorite_feed_list():
 
     try:
         driver.get("http://localhost:1667/#/")
-        time.sleep(3)
+        time.sleep(10)
 
         # Activate Sign in input field:
         login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')

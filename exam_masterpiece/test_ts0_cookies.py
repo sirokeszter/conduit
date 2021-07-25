@@ -12,7 +12,7 @@ def test_cookies():
 
     try:
         driver.get("http://localhost:1667/")
-        time.sleep(4)
+        time.sleep(10)
         # Cookie accept with click accept button:
         driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]').click()
 
