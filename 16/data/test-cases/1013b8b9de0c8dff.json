@@ -1,0 +1,267 @@
+{
+  "uid" : "1013b8b9de0c8dff",
+  "name" : "test_modify_settings",
+  "fullName" : "exam_masterpiece.test_ts7_modify_settings#test_modify_settings",
+  "historyId" : "5e8b225d7e4b0050901dc4c737ac7bd7",
+  "time" : {
+    "start" : 1627251409677,
+    "stop" : 1627251430694,
+    "duration" : 21017
+  },
+  "status" : "broken",
+  "statusMessage" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
+  "statusTrace" : "def test_modify_settings():\n        from selenium import webdriver\n        from selenium.webdriver.chrome.options import Options\n        from webdriver_manager.chrome import ChromeDriverManager\n        from selenium.common.exceptions import NoSuchElementException\n        import time\n    \n        options = Options()\n        options.add_argument('--headless')\n        options.add_argument('--disable-gpu')\n        driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)\n    \n        try:\n            driver.get(\"http://localhost:1667/#/\")\n            time.sleep(10)\n    \n            # Activate Sign in input field:\n            login = driver.find_element_by_xpath('//*[@id=\"app\"]/nav/div/ul/li[2]/a')\n            time.sleep(3)\n            login.click()\n    \n    \n            # Fill input fields:\n            def fill_login(mail, pw):\n                email = driver.find_element_by_xpath('//*[@id=\"app\"]//fieldset[1]/input')\n                password = driver.find_element_by_xpath('//*[@id=\"app\"]//fieldset[2]/input')\n                button = driver.find_element_by_xpath('//*[@id=\"app\"]//form/button')\n    \n                email.send_keys(mail)\n                password.send_keys(pw)\n                button.click()\n    \n            username=\"kiskakas1\"\n            fill_login(\"kiskakas1@gmail.com\", \"Kiskakas1$\")\n    \n            time.sleep(6)\n>           user_page = driver.find_element_by_xpath('//*[@id=\"app\"]/nav/div/ul/li[4]/a')\n\nexam_masterpiece/test_ts7_modify_settings.py:37: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:394: in find_element_by_xpath\n    return self.find_element(by=By.XPATH, value=xpath)\n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:976: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:321: in execute\n    self.error_handler.check_response(response)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7fb3d15c70a0>\nresponse = {'status': 404, 'value': '{\"value\":{\"error\":\"no such element\",\"message\":\"no such element: Unable to locate element: {\\.../li[4]/a\\\\\"}\\\\n  (Session info: headless chrome=91.0.4472.164)\",\"stacktrace\":\"#0 0x5598945e3949 \\\\u003Cunknown>\\\\n\"}}'}\n\n    def check_response(self, response):\n        \"\"\"\n        Checks that a JSON response from the WebDriver does not have an error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get('status', None)\n        if status is None or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get('value', None)\n            if value_json and isinstance(value_json, basestring):\n                import json\n                try:\n                    value = json.loads(value_json)\n                    if len(value.keys()) == 1:\n                        value = value['value']\n                    status = value.get('error', None)\n                    if status is None:\n                        status = value[\"status\"]\n                        message = value[\"value\"]\n                        if not isinstance(message, basestring):\n                            value = message\n                            message = message.get('message')\n                    else:\n                        message = value.get('message', None)\n                except ValueError:\n                    pass\n    \n        exception_class = ErrorInResponseException\n        if status in ErrorCode.NO_SUCH_ELEMENT:\n            exception_class = NoSuchElementException\n        elif status in ErrorCode.NO_SUCH_FRAME:\n            exception_class = NoSuchFrameException\n        elif status in ErrorCode.NO_SUCH_WINDOW:\n            exception_class = NoSuchWindowException\n        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:\n            exception_class = StaleElementReferenceException\n        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:\n            exception_class = ElementNotVisibleException\n        elif status in ErrorCode.INVALID_ELEMENT_STATE:\n            exception_class = InvalidElementStateException\n        elif status in ErrorCode.INVALID_SELECTOR \\\n                or status in ErrorCode.INVALID_XPATH_SELECTOR \\\n                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:\n            exception_class = InvalidSelectorException\n        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:\n            exception_class = ElementNotSelectableException\n        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:\n            exception_class = ElementNotInteractableException\n        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:\n            exception_class = InvalidCookieDomainException\n        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:\n            exception_class = UnableToSetCookieException\n        elif status in ErrorCode.TIMEOUT:\n            exception_class = TimeoutException\n        elif status in ErrorCode.SCRIPT_TIMEOUT:\n            exception_class = TimeoutException\n        elif status in ErrorCode.UNKNOWN_ERROR:\n            exception_class = WebDriverException\n        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:\n            exception_class = UnexpectedAlertPresentException\n        elif status in ErrorCode.NO_ALERT_OPEN:\n            exception_class = NoAlertPresentException\n        elif status in ErrorCode.IME_NOT_AVAILABLE:\n            exception_class = ImeNotAvailableException\n        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:\n            exception_class = ImeActivationFailedException\n        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:\n            exception_class = MoveTargetOutOfBoundsException\n        elif status in ErrorCode.JAVASCRIPT_ERROR:\n            exception_class = JavascriptException\n        elif status in ErrorCode.SESSION_NOT_CREATED:\n            exception_class = SessionNotCreatedException\n        elif status in ErrorCode.INVALID_ARGUMENT:\n            exception_class = InvalidArgumentException\n        elif status in ErrorCode.NO_SUCH_COOKIE:\n            exception_class = NoSuchCookieException\n        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:\n            exception_class = ScreenshotException\n        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:\n            exception_class = ElementClickInterceptedException\n        elif status in ErrorCode.INSECURE_CERTIFICATE:\n            exception_class = InsecureCertificateException\n        elif status in ErrorCode.INVALID_COORDINATES:\n            exception_class = InvalidCoordinatesException\n        elif status in ErrorCode.INVALID_SESSION_ID:\n            exception_class = InvalidSessionIdException\n        elif status in ErrorCode.UNKNOWN_METHOD:\n            exception_class = UnknownMethodException\n        else:\n            exception_class = WebDriverException\n        if value == '' or value is None:\n            value = response['value']\n        if isinstance(value, basestring):\n            if exception_class == ErrorInResponseException:\n                raise exception_class(response, value)\n            raise exception_class(value)\n        if message == \"\" and 'message' in value:\n            message = value['message']\n    \n        screen = None\n        if 'screen' in value:\n            screen = value['screen']\n    \n        stacktrace = None\n        if 'stackTrace' in value and value['stackTrace']:\n            stacktrace = []\n            try:\n                for frame in value['stackTrace']:\n                    line = self._value_or_default(frame, 'lineNumber', '')\n                    file = self._value_or_default(frame, 'fileName', '<anonymous>')\n                    if line:\n                        file = \"%s:%s\" % (file, line)\n                    meth = self._value_or_default(frame, 'methodName', '<anonymous>')\n                    if 'className' in frame:\n                        meth = \"%s.%s\" % (frame['className'], meth)\n                    msg = \"    at %s (%s)\"\n                    msg = msg % (meth, file)\n                    stacktrace.append(msg)\n            except TypeError:\n                pass\n        if exception_class == ErrorInResponseException:\n            raise exception_class(response, message)\n        elif exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if 'data' in value:\n                alert_text = value['data'].get('text')\n            elif 'alert' in value:\n                alert_text = value['alert'].get('text')\n            raise exception_class(message, screen, stacktrace, alert_text)\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\nE         (Session info: headless chrome=91.0.4472.164)\n\n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py:242: NoSuchElementException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
+    "statusTrace" : "def test_modify_settings():\n        from selenium import webdriver\n        from selenium.webdriver.chrome.options import Options\n        from webdriver_manager.chrome import ChromeDriverManager\n        from selenium.common.exceptions import NoSuchElementException\n        import time\n    \n        options = Options()\n        options.add_argument('--headless')\n        options.add_argument('--disable-gpu')\n        driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)\n    \n        try:\n            driver.get(\"http://localhost:1667/#/\")\n            time.sleep(10)\n    \n            # Activate Sign in input field:\n            login = driver.find_element_by_xpath('//*[@id=\"app\"]/nav/div/ul/li[2]/a')\n            time.sleep(3)\n            login.click()\n    \n    \n            # Fill input fields:\n            def fill_login(mail, pw):\n                email = driver.find_element_by_xpath('//*[@id=\"app\"]//fieldset[1]/input')\n                password = driver.find_element_by_xpath('//*[@id=\"app\"]//fieldset[2]/input')\n                button = driver.find_element_by_xpath('//*[@id=\"app\"]//form/button')\n    \n                email.send_keys(mail)\n                password.send_keys(pw)\n                button.click()\n    \n            username=\"kiskakas1\"\n            fill_login(\"kiskakas1@gmail.com\", \"Kiskakas1$\")\n    \n            time.sleep(6)\n>           user_page = driver.find_element_by_xpath('//*[@id=\"app\"]/nav/div/ul/li[4]/a')\n\nexam_masterpiece/test_ts7_modify_settings.py:37: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:394: in find_element_by_xpath\n    return self.find_element(by=By.XPATH, value=xpath)\n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:976: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:321: in execute\n    self.error_handler.check_response(response)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7fb3d15c70a0>\nresponse = {'status': 404, 'value': '{\"value\":{\"error\":\"no such element\",\"message\":\"no such element: Unable to locate element: {\\.../li[4]/a\\\\\"}\\\\n  (Session info: headless chrome=91.0.4472.164)\",\"stacktrace\":\"#0 0x5598945e3949 \\\\u003Cunknown>\\\\n\"}}'}\n\n    def check_response(self, response):\n        \"\"\"\n        Checks that a JSON response from the WebDriver does not have an error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get('status', None)\n        if status is None or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get('value', None)\n            if value_json and isinstance(value_json, basestring):\n                import json\n                try:\n                    value = json.loads(value_json)\n                    if len(value.keys()) == 1:\n                        value = value['value']\n                    status = value.get('error', None)\n                    if status is None:\n                        status = value[\"status\"]\n                        message = value[\"value\"]\n                        if not isinstance(message, basestring):\n                            value = message\n                            message = message.get('message')\n                    else:\n                        message = value.get('message', None)\n                except ValueError:\n                    pass\n    \n        exception_class = ErrorInResponseException\n        if status in ErrorCode.NO_SUCH_ELEMENT:\n            exception_class = NoSuchElementException\n        elif status in ErrorCode.NO_SUCH_FRAME:\n            exception_class = NoSuchFrameException\n        elif status in ErrorCode.NO_SUCH_WINDOW:\n            exception_class = NoSuchWindowException\n        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:\n            exception_class = StaleElementReferenceException\n        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:\n            exception_class = ElementNotVisibleException\n        elif status in ErrorCode.INVALID_ELEMENT_STATE:\n            exception_class = InvalidElementStateException\n        elif status in ErrorCode.INVALID_SELECTOR \\\n                or status in ErrorCode.INVALID_XPATH_SELECTOR \\\n                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:\n            exception_class = InvalidSelectorException\n        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:\n            exception_class = ElementNotSelectableException\n        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:\n            exception_class = ElementNotInteractableException\n        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:\n            exception_class = InvalidCookieDomainException\n        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:\n            exception_class = UnableToSetCookieException\n        elif status in ErrorCode.TIMEOUT:\n            exception_class = TimeoutException\n        elif status in ErrorCode.SCRIPT_TIMEOUT:\n            exception_class = TimeoutException\n        elif status in ErrorCode.UNKNOWN_ERROR:\n            exception_class = WebDriverException\n        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:\n            exception_class = UnexpectedAlertPresentException\n        elif status in ErrorCode.NO_ALERT_OPEN:\n            exception_class = NoAlertPresentException\n        elif status in ErrorCode.IME_NOT_AVAILABLE:\n            exception_class = ImeNotAvailableException\n        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:\n            exception_class = ImeActivationFailedException\n        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:\n            exception_class = MoveTargetOutOfBoundsException\n        elif status in ErrorCode.JAVASCRIPT_ERROR:\n            exception_class = JavascriptException\n        elif status in ErrorCode.SESSION_NOT_CREATED:\n            exception_class = SessionNotCreatedException\n        elif status in ErrorCode.INVALID_ARGUMENT:\n            exception_class = InvalidArgumentException\n        elif status in ErrorCode.NO_SUCH_COOKIE:\n            exception_class = NoSuchCookieException\n        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:\n            exception_class = ScreenshotException\n        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:\n            exception_class = ElementClickInterceptedException\n        elif status in ErrorCode.INSECURE_CERTIFICATE:\n            exception_class = InsecureCertificateException\n        elif status in ErrorCode.INVALID_COORDINATES:\n            exception_class = InvalidCoordinatesException\n        elif status in ErrorCode.INVALID_SESSION_ID:\n            exception_class = InvalidSessionIdException\n        elif status in ErrorCode.UNKNOWN_METHOD:\n            exception_class = UnknownMethodException\n        else:\n            exception_class = WebDriverException\n        if value == '' or value is None:\n            value = response['value']\n        if isinstance(value, basestring):\n            if exception_class == ErrorInResponseException:\n                raise exception_class(response, value)\n            raise exception_class(value)\n        if message == \"\" and 'message' in value:\n            message = value['message']\n    \n        screen = None\n        if 'screen' in value:\n            screen = value['screen']\n    \n        stacktrace = None\n        if 'stackTrace' in value and value['stackTrace']:\n            stacktrace = []\n            try:\n                for frame in value['stackTrace']:\n                    line = self._value_or_default(frame, 'lineNumber', '')\n                    file = self._value_or_default(frame, 'fileName', '<anonymous>')\n                    if line:\n                        file = \"%s:%s\" % (file, line)\n                    meth = self._value_or_default(frame, 'methodName', '<anonymous>')\n                    if 'className' in frame:\n                        meth = \"%s.%s\" % (frame['className'], meth)\n                    msg = \"    at %s (%s)\"\n                    msg = msg % (meth, file)\n                    stacktrace.append(msg)\n            except TypeError:\n                pass\n        if exception_class == ErrorInResponseException:\n            raise exception_class(response, message)\n        elif exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if 'data' in value:\n                alert_text = value['data'].get('text')\n            elif 'alert' in value:\n                alert_text = value['alert'].get('text')\n            raise exception_class(message, screen, stacktrace, alert_text)\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\nE         (Session info: headless chrome=91.0.4472.164)\n\n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py:242: NoSuchElementException",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "bd187044fc944920",
+      "name" : "log",
+      "source" : "bd187044fc944920.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "e4e45f2dfa3bc0c4",
+      "name" : "stderr",
+      "source" : "e4e45f2dfa3bc0c4.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "exam_masterpiece"
+  }, {
+    "name" : "suite",
+    "value" : "test_ts7_modify_settings"
+  }, {
+    "name" : "host",
+    "value" : "fv-az77-953"
+  }, {
+    "name" : "thread",
+    "value" : "4151-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "exam_masterpiece.test_ts7_modify_settings"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 12,
+        "skipped" : 0,
+        "passed" : 7,
+        "unknown" : 0,
+        "total" : 19
+      },
+      "items" : [ {
+        "uid" : "6eec1e8e716ef4da",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/16//#testresult/6eec1e8e716ef4da",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627251029609,
+          "stop" : 1627251084357,
+          "duration" : 54748
+        }
+      }, {
+        "uid" : "f79c4c0d7e4398d",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/15//#testresult/f79c4c0d7e4398d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627250400306,
+          "stop" : 1627250454225,
+          "duration" : 53919
+        }
+      }, {
+        "uid" : "7ed1a2e1f8c4ca74",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/12//#testresult/7ed1a2e1f8c4ca74",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627249919717,
+          "stop" : 1627249940599,
+          "duration" : 20882
+        }
+      }, {
+        "uid" : "8c3dd2a819ba8fa6",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/14//#testresult/8c3dd2a819ba8fa6",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627249421728,
+          "stop" : 1627249442630,
+          "duration" : 20902
+        }
+      }, {
+        "uid" : "676f5b2543bee26f",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/13//#testresult/676f5b2543bee26f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627248803225,
+          "stop" : 1627248858663,
+          "duration" : 55438
+        }
+      }, {
+        "uid" : "63fcf77646e5b1bb",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/14//#testresult/63fcf77646e5b1bb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627248763340,
+          "stop" : 1627248818548,
+          "duration" : 55208
+        }
+      }, {
+        "uid" : "2cc6a3eb68d13a26",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/13//#testresult/2cc6a3eb68d13a26",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627247846272,
+          "stop" : 1627247901525,
+          "duration" : 55253
+        }
+      }, {
+        "uid" : "b2c31018a9b6f25c",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/12//#testresult/b2c31018a9b6f25c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627247084443,
+          "stop" : 1627247139545,
+          "duration" : 55102
+        }
+      }, {
+        "uid" : "8a693758aafbfb52",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/11//#testresult/8a693758aafbfb52",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627246078313,
+          "stop" : 1627246132673,
+          "duration" : 54360
+        }
+      }, {
+        "uid" : "eed82aa2c7eb9a56",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/10//#testresult/eed82aa2c7eb9a56",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627245171078,
+          "stop" : 1627245191013,
+          "duration" : 19935
+        }
+      }, {
+        "uid" : "b200842309360752",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/9//#testresult/b200842309360752",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627243260621,
+          "stop" : 1627243272663,
+          "duration" : 12042
+        }
+      }, {
+        "uid" : "4112fcc079c59982",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/8//#testresult/4112fcc079c59982",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627242200678,
+          "stop" : 1627242212599,
+          "duration" : 11921
+        }
+      }, {
+        "uid" : "4cfd19fb6810f52f",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/7//#testresult/4cfd19fb6810f52f",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627241052307,
+          "stop" : 1627241062201,
+          "duration" : 9894
+        }
+      }, {
+        "uid" : "675015eedeea03d2",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/6//#testresult/675015eedeea03d2",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[2]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627240524214,
+          "stop" : 1627240525829,
+          "duration" : 1615
+        }
+      }, {
+        "uid" : "e5b9157e401c9cc6",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/6//#testresult/e5b9157e401c9cc6",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[2]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627237404515,
+          "stop" : 1627237406156,
+          "duration" : 1641
+        }
+      }, {
+        "uid" : "41731e74c31910c0",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/5//#testresult/41731e74c31910c0",
+        "status" : "broken",
+        "statusDetails" : "ModuleNotFoundError: No module named 'webdriver_manager'",
+        "time" : {
+          "start" : 1627234544057,
+          "stop" : 1627234544058,
+          "duration" : 1
+        }
+      }, {
+        "uid" : "e22a018fbd5373ad",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/4//#testresult/e22a018fbd5373ad",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[2]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627234069576,
+          "stop" : 1627234071428,
+          "duration" : 1852
+        }
+      }, {
+        "uid" : "319c1d01bbd712bf",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/3//#testresult/319c1d01bbd712bf",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627233251509,
+          "stop" : 1627233259715,
+          "duration" : 8206
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "1013b8b9de0c8dff.json",
+  "parameterValues" : [ ]
+}
