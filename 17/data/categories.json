@@ -1,0 +1,103 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"cookie-policy-panel\"]/div/div[2]/button[2]\"}\n  (Session info: headless chrome=91.0.4472.164)",
+      "children" : [ {
+        "name" : "test_cookies",
+        "uid" : "e6b230f5f4810c80",
+        "parentUid" : "0a66b75aca61e0af1b5b210e375035ac",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627251331127,
+          "stop" : 1627251349170,
+          "duration" : 18043
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0a66b75aca61e0af1b5b210e375035ac"
+    }, {
+      "name" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[3]\"}\n  (Session info: headless chrome=91.0.4472.164)",
+      "children" : [ {
+        "name" : "test_registration",
+        "uid" : "9b4180fe1308c09c",
+        "parentUid" : "31bd91588ac49252752a50f5778467ec",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627251349382,
+          "stop" : 1627251361220,
+          "duration" : 11838
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "31bd91588ac49252752a50f5778467ec"
+    }, {
+      "name" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a href=\"#/login\" class=\"nav-link router-link-exact-active active\" aria-current=\"page\">...</a> is not clickable at point (637, 26). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=91.0.4472.164)",
+      "children" : [ {
+        "name" : "test_add_del_article",
+        "uid" : "8a7201c0ad556962",
+        "parentUid" : "a72c37376abaa1cfc1de7c2ef45792f0",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627251382817,
+          "stop" : 1627251401819,
+          "duration" : 19002
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_add_database_articles",
+        "uid" : "cff2ef241573b79b",
+        "parentUid" : "a72c37376abaa1cfc1de7c2ef45792f0",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627251401864,
+          "stop" : 1627251417863,
+          "duration" : 15999
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a72c37376abaa1cfc1de7c2ef45792f0"
+    }, {
+      "name" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
+      "children" : [ {
+        "name" : "test_favorite_feed_list",
+        "uid" : "7de7a8abf779c167",
+        "parentUid" : "08d3dc4261c78abbfae795caa9cc3d78",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627251434833,
+          "stop" : 1627251457793,
+          "duration" : 22960
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_modify_settings",
+        "uid" : "1d3ccd7f9493ed60",
+        "parentUid" : "08d3dc4261c78abbfae795caa9cc3d78",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627251457839,
+          "stop" : 1627251478774,
+          "duration" : 20935
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "08d3dc4261c78abbfae795caa9cc3d78"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
