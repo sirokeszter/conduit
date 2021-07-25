@@ -1,5 +1,6 @@
 def test_add_database_articles():
-
+    import sys
+    sys.path.append(r'E:\conduit\exam_masterpiece')
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
     from webdriver_manager.chrome import ChromeDriverManager
@@ -30,7 +31,7 @@ def test_add_database_articles():
             password.send_keys(pw)
             button.click()
 
-        username= "kiskakas1"
+        username = "kiskakas1"
         fill_login("kiskakas1@gmail.com", "Kiskakas1$")
 
         time.sleep(3)
