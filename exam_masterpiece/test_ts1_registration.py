@@ -17,6 +17,7 @@ def test_registration():
         time.sleep(5)
         # Activate Sign up input field
         sign_up = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[3]')
+        time.sleep(3)
         mousehover = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[3]/a')
         ActionChains(driver).move_to_element(mousehover).perform()
         time.sleep(3)
@@ -49,8 +50,9 @@ def test_registration():
         alert_button.click()
 
         # Checking registrated user name:
+        time.sleep(4)
         user_page=driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
-        time.sleep(2)
+        time.sleep(4)
         user_name=driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/h4').text
         time.sleep(2)
         print(driver.current_url)
@@ -69,13 +71,16 @@ def test_registration():
 
 
         # Registration with correct, existing data:
+        time.sleep(3)
         sign_up.click()
+        time.sleep(3)
         fill_registration("kiskakas1","kiskakas1@gmail.com", "Kiskakas1$")
 
         time.sleep(3)
         alert_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
         ref_text2 = driver.find_element_by_xpath('/html/body/div[2]/div/div[2]').text
         sub_ref_text2=driver.find_element_by_xpath('/html/body/div[2]/div/div[3]').text
+
         # Checking correct alert messages
         assert ref_text2 == 'Registration failed!'
         assert sub_ref_text2=='Email already taken.'

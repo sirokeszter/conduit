@@ -22,6 +22,7 @@ def test_cookies():
         def check_non_exists_by_xpath(xpath):
             try:
                 driver.find_element_by_xpath(xpath)
+                time.sleep(2)
             except NoSuchElementException:
                 return True
             return False

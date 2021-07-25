@@ -16,6 +16,7 @@ def test_add_del_article():
 
         # Sign in:
         login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
+        time.sleep(2)
         login.click()
 
         # Fill input fields:
@@ -93,6 +94,7 @@ def test_add_del_article():
         # Testing feed delete function:
         time.sleep(4)
         my_articles1 = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
+        time.sleep(3)
         feed_titles1 = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/h1')
         feed_titles1[-1].click()
         time.sleep(1)

@@ -17,6 +17,7 @@ def test_login():
 
         # Activate Sign in input field:
         login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
+        time.sleep(3)
         mousehover = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
         ActionChains(driver).move_to_element(mousehover).perform()
         time.sleep(3)

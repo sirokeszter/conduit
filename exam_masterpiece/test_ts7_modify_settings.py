@@ -96,7 +96,7 @@ def test_modify_settings():
         try:
             time.sleep(4)
             user_page = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
-            time.sleep(2)
+            time.sleep(4)
             user_name = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/h4').text
             time.sleep(2)
             print(driver.current_url)
