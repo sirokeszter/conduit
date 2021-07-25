@@ -1,5 +1,6 @@
 def test_add_database_articles():
     import os
+    import sys
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
     from webdriver_manager.chrome import ChromeDriverManager
@@ -45,8 +46,8 @@ def test_add_database_articles():
         # currentDir = os.getcwd()
         # currentFileCSV = currentDir + "//" + "test.csv"
         # csvFileObj = open(currentFileCSV)
-        #sys.path.append(r'E:/conduit/exam_masterpiece')
-        with open('E:/conduit/exam_masterpiece/test.csv', 'r', encoding='utf-8') as csvfile:
+        sys.path.append(r'E:/conduit/exam_masterpiece/')
+        with open('test.csv', 'r', encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
             for row in csvreader:
                 article_title.send_keys(row[0])
