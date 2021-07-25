@@ -27,8 +27,9 @@ def test_cookies():
                 return True
             return False
 
-        time.sleep(4)
+        time.sleep(6)
         check_non_exists_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]')
+        time.sleep(2)
 
     finally:
         driver.close()

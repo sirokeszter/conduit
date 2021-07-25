@@ -15,9 +15,10 @@ def test_registration():
     try:
         driver.get("http://localhost:1667/")
         time.sleep(10)
+
         # Activate Sign up input field
         sign_up = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[3]')
-        time.sleep(3)
+        time.sleep(5)
         mousehover = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[3]/a')
         ActionChains(driver).move_to_element(mousehover).perform()
         time.sleep(3)
@@ -71,7 +72,7 @@ def test_registration():
 
 
         # Registration with correct, existing data:
-        time.sleep(3)
+        time.sleep(5)
         sign_up.click()
         time.sleep(3)
         fill_registration("kiskakas1","kiskakas1@gmail.com", "Kiskakas1$")
@@ -87,6 +88,7 @@ def test_registration():
         alert_button.click()
 
         # Registration with unformal email:
+        time.sleep(3)
         fill_registration("kiskakas2","kiskakas2", "Kiskakas2$")
 
         time.sleep(3)
@@ -99,6 +101,7 @@ def test_registration():
         alert_button.click()
 
      # Registration with unformal password:
+        time.sleep(3)
         fill_registration("kiskakas2","kiskakas2@gmail.com", "kiskakas")
 
         time.sleep(3)

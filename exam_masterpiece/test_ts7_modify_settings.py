@@ -33,9 +33,10 @@ def test_modify_settings():
         username="kiskakas1"
         fill_login("kiskakas1@gmail.com", "Kiskakas1$")
 
-        time.sleep(5)
-
-        user_page = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
+        time.sleep(6)
+        user_page = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a')
+        time.sleep(2)
+        user_page.click()
         time.sleep(2)
         edit_profile = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]//a').click()
         time.sleep(3)
@@ -73,9 +74,9 @@ def test_modify_settings():
         confirm_button.click()
 
         # Checking modified user name:
-        time.sleep(5)
+        time.sleep(6)
         user_page1 = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
-        time.sleep(2)
+        time.sleep(4)
         user_name = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/h4').text
         time.sleep(2)
         print(driver.current_url)

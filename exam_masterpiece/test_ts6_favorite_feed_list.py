@@ -42,8 +42,10 @@ def test_favorite_feed_list():
 
         # Favorized articles:
         article_list = []
-        time.sleep(4)
-        user_page = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
+        time.sleep(6)
+        user_page = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a')
+        time.sleep(2)
+        user_page.click()
         time.sleep(4)
         favorite_article = driver.find_element_by_xpath('//*[@id="app"]//div[2]//ul/li[2]/a').click()
         time.sleep(2)
