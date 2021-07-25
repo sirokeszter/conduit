@@ -12,7 +12,7 @@ def test_add_del_article():
 
     try:
         driver.get("http://localhost:1667/")
-        time.sleep(2)
+        time.sleep(4)
 
         # Sign in:
         login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
@@ -31,7 +31,7 @@ def test_add_del_article():
         username = "kiskakas1"
         fill_login("kiskakas1@gmail.com", "Kiskakas1$")
 
-        time.sleep(2)
+        time.sleep(4)
 
         new_article = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a').click()
         time.sleep(2)
@@ -53,7 +53,7 @@ def test_add_del_article():
         write_new_article("Kakasmese", "Kakasról", "Egyszer volt", "kakas")
 
         # Checking the elements (title, about, tag) of the new article:
-        time.sleep(1)
+        time.sleep(4)
         my_articles = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
         time.sleep(2)
 
@@ -91,7 +91,7 @@ def test_add_del_article():
         assert feed_tag_list[-1] == 'kakas'
 
         # Testing feed delete function:
-        time.sleep(1)
+        time.sleep(4)
         my_articles1 = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
         feed_titles1 = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/h1')
         feed_titles1[-1].click()
