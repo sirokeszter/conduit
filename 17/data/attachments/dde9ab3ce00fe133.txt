@@ -1,2 +1,0 @@
-['Lorem ipsum dolor sit amet', 'In nisl nisi scelerisque eu', 'Urna nunc id cursus metus.']
-['Lorem ipsum dolor sit amet', 'In nisl nisi scelerisque eu', 'Urna nunc id cursus metus.']
