@@ -1,12 +1,12 @@
 {
-  "uid" : "2e789e4311ae561e",
+  "uid" : "9673faf297145f0f",
   "name" : "test_favorite_feed_list",
   "fullName" : "exam_masterpiece.test_ts6_favorite_feed_list#test_favorite_feed_list",
   "historyId" : "c5ddf585998a253dd573fba0dc8ccd93",
   "time" : {
-    "start" : 1627307372672,
-    "stop" : 1627307408867,
-    "duration" : 36195
+    "start" : 1627307981740,
+    "stop" : 1627308018215,
+    "duration" : 36475
   },
   "status" : "passed",
   "flaky" : false,
@@ -16,21 +16,21 @@
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "ae6bbd86465e6554",
+      "uid" : "112a1faaf1b57014",
       "name" : "log",
-      "source" : "ae6bbd86465e6554.txt",
+      "source" : "112a1faaf1b57014.txt",
       "type" : "text/plain",
       "size" : 344
     }, {
-      "uid" : "99c8bbd33d1d4a56",
+      "uid" : "b437f832f9c2e1ca",
       "name" : "stdout",
-      "source" : "99c8bbd33d1d4a56.txt",
+      "source" : "b437f832f9c2e1ca.txt",
       "type" : "text/plain",
       "size" : 184
     }, {
-      "uid" : "dd2bf691947630aa",
+      "uid" : "f12c9207f37add9f",
       "name" : "stderr",
-      "source" : "dd2bf691947630aa.txt",
+      "source" : "f12c9207f37add9f.txt",
       "type" : "text/plain",
       "size" : 215
     } ],
@@ -49,10 +49,10 @@
     "value" : "test_ts6_favorite_feed_list"
   }, {
     "name" : "host",
-    "value" : "fv-az39-748"
+    "value" : "fv-az81-15"
   }, {
     "name" : "thread",
-    "value" : "3682-MainThread"
+    "value" : "4213-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -79,11 +79,20 @@
         "failed" : 1,
         "broken" : 17,
         "skipped" : 0,
-        "passed" : 16,
+        "passed" : 17,
         "unknown" : 0,
-        "total" : 34
+        "total" : 35
       },
       "items" : [ {
+        "uid" : "2e789e4311ae561e",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/29//#testresult/2e789e4311ae561e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627307372672,
+          "stop" : 1627307408867,
+          "duration" : 36195
+        }
+      }, {
         "uid" : "4721ef1fcfe6b76d",
         "reportUrl" : "https://sirokeszter.github.io/conduit/27//#testresult/4721ef1fcfe6b76d",
         "status" : "passed",
@@ -262,20 +271,10 @@
           "stop" : 1627249421678,
           "duration" : 23943
         }
-      }, {
-        "uid" : "86b99e7e2af9a026",
-        "reportUrl" : "https://sirokeszter.github.io/conduit/13//#testresult/86b99e7e2af9a026",
-        "status" : "failed",
-        "statusDetails" : "AssertionError: assert ['Lorem ipsum...ursus metus.'] == ['Lorem ipsum...e magna', ...]\n  Right contains 8 more items, first extra item: 'Egestas egestas'\n  Use -v to get the full diff",
-        "time" : {
-          "start" : 1627248766620,
-          "stop" : 1627248803211,
-          "duration" : 36591
-        }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "2e789e4311ae561e.json",
+  "source" : "9673faf297145f0f.json",
   "parameterValues" : [ ]
 }
