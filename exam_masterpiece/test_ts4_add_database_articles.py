@@ -43,10 +43,7 @@ def test_add_database_articles():
         article_tag = driver.find_element_by_xpath('//*[@id="app"]//fieldset[4]//input')
         publish_button = driver.find_element_by_xpath('//*[@id="app"]//form/button')
 
-        currentDir = os.getcwd()
-        currentFileCSV = currentDir + "//" + "test.csv"
-        csvFileObj = open(currentFileCSV)
-        #sys.path.append(r'E:/conduit/exam_masterpiece/')
+        os.chdir(r'E:\conduit\exam_masterpiece\test.csv')
         with open('test.csv', 'r', encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
             for row in csvreader:
@@ -83,7 +80,7 @@ def test_add_database_articles():
 
         # Create a list from the feed's titles in csv:
         csv_title_count = 0
-        with open('E:/conduit/exam_masterpiece/test.csv', 'r', encoding='utf-8') as csvfile:
+        with open('test.csv', 'r', encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
             for row in csvreader:
                 csv_title_count += 1
