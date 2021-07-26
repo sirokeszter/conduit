@@ -14,7 +14,9 @@ def test_cookies():
         driver.get("http://localhost:1667/")
         time.sleep(10)
         # Cookie accept with click accept button:
-        driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]').click()
+        accept_button = driver.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]')
+        time.sleep(2)
+        accept_button.click()
         time.sleep(4)
 
         # Decline button:
