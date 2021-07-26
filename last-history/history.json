@@ -4,11 +4,20 @@
       "failed" : 0,
       "broken" : 17,
       "skipped" : 0,
-      "passed" : 18,
+      "passed" : 19,
       "unknown" : 0,
-      "total" : 35
+      "total" : 36
     },
     "items" : [ {
+      "uid" : "cc5db22b6c1a04bd",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/cc5db22b6c1a04bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1627327771026,
+        "stop" : 1627327826159,
+        "duration" : 55133
+      }
+    }, {
       "uid" : "3ce4ca0e51d74160",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/3ce4ca0e51d74160",
       "status" : "passed",
@@ -185,16 +194,6 @@
         "stop" : 1627250454225,
         "duration" : 53919
       }
-    }, {
-      "uid" : "7ed1a2e1f8c4ca74",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/12//#testresult/7ed1a2e1f8c4ca74",
-      "status" : "broken",
-      "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
-      "time" : {
-        "start" : 1627249919717,
-        "stop" : 1627249940599,
-        "duration" : 20882
-      }
     } ]
   },
   "3a9b84cec3bf072b20d32185ba372316" : {
@@ -202,11 +201,20 @@
       "failed" : 0,
       "broken" : 17,
       "skipped" : 0,
-      "passed" : 18,
+      "passed" : 19,
       "unknown" : 0,
-      "total" : 35
+      "total" : 36
     },
     "items" : [ {
+      "uid" : "b0c09895b76699ae",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/b0c09895b76699ae",
+      "status" : "passed",
+      "time" : {
+        "start" : 1627327582598,
+        "stop" : 1627327643606,
+        "duration" : 61008
+      }
+    }, {
       "uid" : "9033af946f5bdc87",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/9033af946f5bdc87",
       "status" : "passed",
@@ -383,16 +391,6 @@
         "stop" : 1627250265451,
         "duration" : 60522
       }
-    }, {
-      "uid" : "fdf4b1bb10f18e0c",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/12//#testresult/fdf4b1bb10f18e0c",
-      "status" : "broken",
-      "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[3]\"}\n  (Session info: headless chrome=91.0.4472.164)",
-      "time" : {
-        "start" : 1627249810389,
-        "stop" : 1627249822242,
-        "duration" : 11853
-      }
     } ]
   },
   "c5ddf585998a253dd573fba0dc8ccd93" : {
@@ -400,11 +398,20 @@
       "failed" : 1,
       "broken" : 17,
       "skipped" : 0,
-      "passed" : 17,
+      "passed" : 18,
       "unknown" : 0,
-      "total" : 35
+      "total" : 36
     },
     "items" : [ {
+      "uid" : "ce1d8adf363aa859",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/ce1d8adf363aa859",
+      "status" : "passed",
+      "time" : {
+        "start" : 1627327734662,
+        "stop" : 1627327771023,
+        "duration" : 36361
+      }
+    }, {
       "uid" : "9673faf297145f0f",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/9673faf297145f0f",
       "status" : "passed",
@@ -581,16 +588,6 @@
         "stop" : 1627250400302,
         "duration" : 36123
       }
-    }, {
-      "uid" : "609ab31e2fd18e9b",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/12//#testresult/609ab31e2fd18e9b",
-      "status" : "broken",
-      "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/nav/div/ul/li[4]/a\"}\n  (Session info: headless chrome=91.0.4472.164)",
-      "time" : {
-        "start" : 1627249895755,
-        "stop" : 1627249919677,
-        "duration" : 23922
-      }
     } ]
   },
   "c56c6b258f439b04b8878255e2b31c90" : {
@@ -598,11 +595,20 @@
       "failed" : 0,
       "broken" : 9,
       "skipped" : 0,
-      "passed" : 26,
+      "passed" : 27,
       "unknown" : 0,
-      "total" : 35
+      "total" : 36
     },
     "items" : [ {
+      "uid" : "d6b0b7218787f2ad",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/d6b0b7218787f2ad",
+      "status" : "passed",
+      "time" : {
+        "start" : 1627327643610,
+        "stop" : 1627327669138,
+        "duration" : 25528
+      }
+    }, {
       "uid" : "bafbfc4eea1b1bc9",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/bafbfc4eea1b1bc9",
       "status" : "passed",
@@ -774,15 +780,6 @@
         "stop" : 1627250290810,
         "duration" : 25355
       }
-    }, {
-      "uid" : "dbf762faaaa4356e",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/12//#testresult/dbf762faaaa4356e",
-      "status" : "passed",
-      "time" : {
-        "start" : 1627249822283,
-        "stop" : 1627249843854,
-        "duration" : 21571
-      }
     } ]
   },
   "d5930bb692116c72e798cf3eaa7c5391" : {
@@ -790,11 +787,20 @@
       "failed" : 0,
       "broken" : 5,
       "skipped" : 0,
-      "passed" : 30,
+      "passed" : 31,
       "unknown" : 0,
-      "total" : 35
+      "total" : 36
     },
     "items" : [ {
+      "uid" : "4eaa17b30e96645",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/4eaa17b30e96645",
+      "status" : "passed",
+      "time" : {
+        "start" : 1627327715368,
+        "stop" : 1627327734658,
+        "duration" : 19290
+      }
+    }, {
       "uid" : "f87630cfb2a8ba9",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/f87630cfb2a8ba9",
       "status" : "passed",
@@ -965,27 +971,28 @@
         "stop" : 1627250364176,
         "duration" : 19045
       }
-    }, {
-      "uid" : "f6177dfec9869420",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/12//#testresult/f6177dfec9869420",
-      "status" : "passed",
-      "time" : {
-        "start" : 1627249878814,
-        "stop" : 1627249895752,
-        "duration" : 16938
-      }
     } ]
   },
   "07fe76b1e487cb38d58a4e75b15e5047" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 35,
+      "broken" : 36,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 35
+      "total" : 36
     },
     "items" : [ {
+      "uid" : "7dd7aea411fd08f9",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/7dd7aea411fd08f9",
+      "status" : "broken",
+      "statusDetails" : "FileNotFoundError: [Errno 2] No such file or directory: '\\\\content\\\\drive\\\\MyDrive\\\\test.csv'",
+      "time" : {
+        "start" : 1627327698346,
+        "stop" : 1627327715358,
+        "duration" : 17012
+      }
+    }, {
       "uid" : "f2d7c55f58d6b63a",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/f2d7c55f58d6b63a",
       "status" : "broken",
@@ -1175,28 +1182,28 @@
         "stop" : 1627250345094,
         "duration" : 16882
       }
-    }, {
-      "uid" : "72d9deecf0d156b3",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/12//#testresult/72d9deecf0d156b3",
-      "status" : "broken",
-      "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a href=\"#/login\" class=\"nav-link router-link-exact-active active\" aria-current=\"page\">...</a> is not clickable at point (637, 26). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=91.0.4472.164)",
-      "time" : {
-        "start" : 1627249862840,
-        "stop" : 1627249878777,
-        "duration" : 15937
-      }
     } ]
   },
   "145895ccc65e6410f1f2ed102c32cc17" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 20,
+      "broken" : 21,
       "skipped" : 0,
       "passed" : 15,
       "unknown" : 0,
-      "total" : 35
+      "total" : 36
     },
     "items" : [ {
+      "uid" : "a4e52a339320f6a7",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/a4e52a339320f6a7",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document\n  (Session info: headless chrome=91.0.4472.164)",
+      "time" : {
+        "start" : 1627327669142,
+        "stop" : 1627327698253,
+        "duration" : 29111
+      }
+    }, {
       "uid" : "1e2a135c4ffdabe7",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/1e2a135c4ffdabe7",
       "status" : "passed",
@@ -1376,16 +1383,6 @@
         "stop" : 1627250328209,
         "duration" : 37395
       }
-    }, {
-      "uid" : "e8ca8cd683103a3",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/12//#testresult/e8ca8cd683103a3",
-      "status" : "broken",
-      "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a href=\"#/login\" class=\"nav-link router-link-exact-active active\" aria-current=\"page\">...</a> is not clickable at point (637, 26). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=91.0.4472.164)",
-      "time" : {
-        "start" : 1627249843860,
-        "stop" : 1627249862800,
-        "duration" : 18940
-      }
     } ]
   },
   "dce9624b9435308259a1625b9477448f" : {
@@ -1393,11 +1390,20 @@
       "failed" : 0,
       "broken" : 28,
       "skipped" : 0,
-      "passed" : 7,
+      "passed" : 8,
       "unknown" : 0,
-      "total" : 35
+      "total" : 36
     },
     "items" : [ {
+      "uid" : "9c5a6cb6082e14a7",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/9c5a6cb6082e14a7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1627327540901,
+        "stop" : 1627327582594,
+        "duration" : 41693
+      }
+    }, {
       "uid" : "65480ad72bdbbb8f",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/65480ad72bdbbb8f",
       "status" : "broken",
@@ -1579,16 +1585,6 @@
         "start" : 1627250165814,
         "stop" : 1627250204925,
         "duration" : 39111
-      }
-    }, {
-      "uid" : "78ddee08f1159707",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/12//#testresult/78ddee08f1159707",
-      "status" : "broken",
-      "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"cookie-policy-panel\"]/div/div[2]/button[2]\"}\n  (Session info: headless chrome=91.0.4472.164)",
-      "time" : {
-        "start" : 1627249792807,
-        "stop" : 1627249810179,
-        "duration" : 17372
       }
     } ]
   }
