@@ -1,7 +1,5 @@
 def test_add_database_articles():
-    filename = r'/content/drive/MyDrive/test.csv'
     import csv
-    open(filename)
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
     from webdriver_manager.chrome import ChromeDriverManager
@@ -42,6 +40,9 @@ def test_add_database_articles():
         article_content = driver.find_element_by_xpath('//*[@id="app"]//fieldset[3]/textarea')
         article_tag = driver.find_element_by_xpath('//*[@id="app"]//fieldset[4]//input')
         publish_button = driver.find_element_by_xpath('//*[@id="app"]//form/button')
+
+        filename = r'\content\drive\MyDrive\test.csv'
+        open(filename)
 
         with open('test.csv', 'r', encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
