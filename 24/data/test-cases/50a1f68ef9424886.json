@@ -1,0 +1,283 @@
+{
+  "uid" : "50a1f68ef9424886",
+  "name" : "test_add_del_article",
+  "fullName" : "exam_masterpiece.test_ts3_add_del_article#test_add_del_article",
+  "historyId" : "145895ccc65e6410f1f2ed102c32cc17",
+  "time" : {
+    "start" : 1627287040349,
+    "stop" : 1627287078071,
+    "duration" : 37722
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "ce2b695e9c791266",
+      "name" : "log",
+      "source" : "ce2b695e9c791266.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "9a4ac8b217dd7243",
+      "name" : "stdout",
+      "source" : "9a4ac8b217dd7243.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "8893d47d25c6260c",
+      "name" : "stderr",
+      "source" : "8893d47d25c6260c.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "exam_masterpiece"
+  }, {
+    "name" : "suite",
+    "value" : "test_ts3_add_del_article"
+  }, {
+    "name" : "host",
+    "value" : "fv-az77-953"
+  }, {
+    "name" : "thread",
+    "value" : "3581-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "exam_masterpiece.test_ts3_add_del_article"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 19,
+        "skipped" : 0,
+        "passed" : 10,
+        "unknown" : 0,
+        "total" : 29
+      },
+      "items" : [ {
+        "uid" : "c77a7742b3625a0f",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/23//#testresult/c77a7742b3625a0f",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a href=\"#/login\" class=\"nav-link router-link-exact-active active\" aria-current=\"page\">...</a> is not clickable at point (637, 26). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627286561615,
+          "stop" : 1627286580585,
+          "duration" : 18970
+        }
+      }, {
+        "uid" : "4e5471304e411ea5",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/22//#testresult/4e5471304e411ea5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627285592427,
+          "stop" : 1627285629802,
+          "duration" : 37375
+        }
+      }, {
+        "uid" : "8788e0088125617c",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/21//#testresult/8788e0088125617c",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627284758763,
+          "stop" : 1627284786685,
+          "duration" : 27922
+        }
+      }, {
+        "uid" : "2dadbe007d7eecbd",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/21//#testresult/2dadbe007d7eecbd",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a href=\"#/login\" class=\"nav-link router-link-exact-active active\" aria-current=\"page\">...</a> is not clickable at point (637, 26). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627284002687,
+          "stop" : 1627284021789,
+          "duration" : 19102
+        }
+      }, {
+        "uid" : "6955ceff4adaaf32",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/20//#testresult/6955ceff4adaaf32",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a href=\"#/login\" class=\"nav-link router-link-exact-active active\" aria-current=\"page\">...</a> is not clickable at point (637, 26). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627283960233,
+          "stop" : 1627283979215,
+          "duration" : 18982
+        }
+      }, {
+        "uid" : "b7b7dda070c0f24b",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/19//#testresult/b7b7dda070c0f24b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627281088265,
+          "stop" : 1627281125645,
+          "duration" : 37380
+        }
+      }, {
+        "uid" : "7ae6480eeecb2a2c",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/18//#testresult/7ae6480eeecb2a2c",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a href=\"#/login\" class=\"nav-link router-link-exact-active active\" aria-current=\"page\">...</a> is not clickable at point (637, 26). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627280921610,
+          "stop" : 1627280939564,
+          "duration" : 17954
+        }
+      }, {
+        "uid" : "cb3d1a464426d05d",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/17//#testresult/cb3d1a464426d05d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627280170908,
+          "stop" : 1627280207443,
+          "duration" : 36535
+        }
+      }, {
+        "uid" : "8a7201c0ad556962",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/17//#testresult/8a7201c0ad556962",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a href=\"#/login\" class=\"nav-link router-link-exact-active active\" aria-current=\"page\">...</a> is not clickable at point (637, 26). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627251382817,
+          "stop" : 1627251401819,
+          "duration" : 19002
+        }
+      }, {
+        "uid" : "80c6faf846e92d04",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/16//#testresult/80c6faf846e92d04",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a href=\"#/login\" class=\"nav-link router-link-exact-active active\" aria-current=\"page\">...</a> is not clickable at point (637, 26). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627251333504,
+          "stop" : 1627251352505,
+          "duration" : 19001
+        }
+      }, {
+        "uid" : "3ea8fa801798c3a",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/16//#testresult/3ea8fa801798c3a",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627250929855,
+          "stop" : 1627250958599,
+          "duration" : 28744
+        }
+      }, {
+        "uid" : "b2943e35ef917f1",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/15//#testresult/b2943e35ef917f1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627250290814,
+          "stop" : 1627250328209,
+          "duration" : 37395
+        }
+      }, {
+        "uid" : "e8ca8cd683103a3",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/12//#testresult/e8ca8cd683103a3",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a href=\"#/login\" class=\"nav-link router-link-exact-active active\" aria-current=\"page\">...</a> is not clickable at point (637, 26). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627249843860,
+          "stop" : 1627249862800,
+          "duration" : 18940
+        }
+      }, {
+        "uid" : "e8be2e1471e5e6cc",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/14//#testresult/e8be2e1471e5e6cc",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a href=\"#/login\" class=\"nav-link router-link-exact-active active\" aria-current=\"page\">...</a> is not clickable at point (637, 26). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627249345821,
+          "stop" : 1627249364773,
+          "duration" : 18952
+        }
+      }, {
+        "uid" : "6826152b2f87fee9",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/13//#testresult/6826152b2f87fee9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627248692347,
+          "stop" : 1627248730110,
+          "duration" : 37763
+        }
+      }, {
+        "uid" : "6bd863a5bad8a24e",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/14//#testresult/6bd863a5bad8a24e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627248653568,
+          "stop" : 1627248691037,
+          "duration" : 37469
+        }
+      }, {
+        "uid" : "165083b9fff7494f",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/13//#testresult/165083b9fff7494f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627247738306,
+          "stop" : 1627247775863,
+          "duration" : 37557
+        }
+      }, {
+        "uid" : "bf69b5eebe2f612a",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/12//#testresult/bf69b5eebe2f612a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627246974649,
+          "stop" : 1627247012135,
+          "duration" : 37486
+        }
+      }, {
+        "uid" : "60b800a3d57e7753",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/11//#testresult/60b800a3d57e7753",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627245970548,
+          "stop" : 1627246008018,
+          "duration" : 37470
+        }
+      }, {
+        "uid" : "96f25b7279801c89",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/10//#testresult/96f25b7279801c89",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a href=\"#/login\" class=\"nav-link router-link-exact-active active\" aria-current=\"page\">...</a> is not clickable at point (637, 26). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=91.0.4472.164)",
+        "time" : {
+          "start" : 1627245097107,
+          "stop" : 1627245116102,
+          "duration" : 18995
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "50a1f68ef9424886.json",
+  "parameterValues" : [ ]
+}
