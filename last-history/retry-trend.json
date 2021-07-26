@@ -1,4 +1,12 @@
 [ {
+  "buildOrder" : 32,
+  "reportUrl" : "https://sirokeszter.github.io/conduit/32/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "run" : 8,
+    "retry" : 0
+  }
+}, {
   "buildOrder" : 31,
   "reportUrl" : "https://sirokeszter.github.io/conduit/31/",
   "reportName" : "Allure Report with history",
@@ -137,14 +145,6 @@
 }, {
   "buildOrder" : 17,
   "reportUrl" : "https://sirokeszter.github.io/conduit/17/",
-  "reportName" : "Allure Report with history",
-  "data" : {
-    "run" : 8,
-    "retry" : 0
-  }
-}, {
-  "buildOrder" : 16,
-  "reportUrl" : "https://sirokeszter.github.io/conduit/16/",
   "reportName" : "Allure Report with history",
   "data" : {
     "run" : 8,

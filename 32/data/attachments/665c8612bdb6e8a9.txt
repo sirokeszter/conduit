@@ -1,0 +1,3 @@
+The title-list of Global feeds:  ['Lorem ipsum dolor sit amet', 'In nisl nisi scelerisque eu', 'Urna nunc id cursus metus.', 'Egestas egestas', 'Laoreet suspendisse interdum', 'Nibh praesent tristique magna', 'Eget mi proin sed libero', 'Nunc lobortis mattis aliquam', 'Cras sed felis eget velit', 'Elementum facilisis leo vel fringilla', 'Mi eget mauris pharetra et', 'Anyám tyúkja', 'Apám kakasa', 'Mi eget mauris pharetra et', 'Anyám tyúkja', 'Apám kakasa']
+Number of Global feeds:  16
+16
