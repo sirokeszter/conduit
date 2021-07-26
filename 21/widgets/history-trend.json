@@ -4,6 +4,18 @@
   "reportName" : "Allure Report with history",
   "data" : {
     "failed" : 0,
+    "broken" : 3,
+    "skipped" : 0,
+    "passed" : 5,
+    "unknown" : 0,
+    "total" : 8
+  }
+}, {
+  "buildOrder" : 21,
+  "reportUrl" : "https://sirokeszter.github.io/conduit/21/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "failed" : 0,
     "broken" : 7,
     "skipped" : 0,
     "passed" : 1,
@@ -217,18 +229,6 @@
 }, {
   "buildOrder" : 8,
   "reportUrl" : "https://sirokeszter.github.io/conduit/8/",
-  "reportName" : "Allure Report with history",
-  "data" : {
-    "failed" : 0,
-    "broken" : 7,
-    "skipped" : 0,
-    "passed" : 1,
-    "unknown" : 0,
-    "total" : 8
-  }
-}, {
-  "buildOrder" : 7,
-  "reportUrl" : "https://sirokeszter.github.io/conduit/7/",
   "reportName" : "Allure Report with history",
   "data" : {
     "failed" : 0,

@@ -3,6 +3,13 @@
   "reportUrl" : "https://sirokeszter.github.io/conduit/21/",
   "reportName" : "Allure Report with history",
   "data" : {
+    "duration" : 259296
+  }
+}, {
+  "buildOrder" : 21,
+  "reportUrl" : "https://sirokeszter.github.io/conduit/21/",
+  "reportName" : "Allure Report with history",
+  "data" : {
     "duration" : 134006
   }
 }, {
@@ -130,12 +137,5 @@
   "reportName" : "Allure Report with history",
   "data" : {
     "duration" : 67532
-  }
-}, {
-  "buildOrder" : 7,
-  "reportUrl" : "https://sirokeszter.github.io/conduit/7/",
-  "reportName" : "Allure Report with history",
-  "data" : {
-    "duration" : 52267
   }
 } ]
