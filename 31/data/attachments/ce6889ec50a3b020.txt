@@ -1,0 +1,2 @@
+['Anyám tyúkja', 'Apám kakasa']
+2

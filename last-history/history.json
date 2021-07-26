@@ -4,11 +4,20 @@
       "failed" : 0,
       "broken" : 17,
       "skipped" : 0,
-      "passed" : 19,
+      "passed" : 20,
       "unknown" : 0,
-      "total" : 36
+      "total" : 37
     },
     "items" : [ {
+      "uid" : "99234635f615a6f3",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/31//#testresult/99234635f615a6f3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1627329383573,
+        "stop" : 1627329438832,
+        "duration" : 55259
+      }
+    }, {
       "uid" : "cc5db22b6c1a04bd",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/cc5db22b6c1a04bd",
       "status" : "passed",
@@ -185,15 +194,6 @@
         "stop" : 1627251084357,
         "duration" : 54748
       }
-    }, {
-      "uid" : "f79c4c0d7e4398d",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/15//#testresult/f79c4c0d7e4398d",
-      "status" : "passed",
-      "time" : {
-        "start" : 1627250400306,
-        "stop" : 1627250454225,
-        "duration" : 53919
-      }
     } ]
   },
   "3a9b84cec3bf072b20d32185ba372316" : {
@@ -201,11 +201,20 @@
       "failed" : 0,
       "broken" : 17,
       "skipped" : 0,
-      "passed" : 19,
+      "passed" : 20,
       "unknown" : 0,
-      "total" : 36
+      "total" : 37
     },
     "items" : [ {
+      "uid" : "1a0baa1286edc768",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/31//#testresult/1a0baa1286edc768",
+      "status" : "passed",
+      "time" : {
+        "start" : 1627329175389,
+        "stop" : 1627329236368,
+        "duration" : 60979
+      }
+    }, {
       "uid" : "b0c09895b76699ae",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/b0c09895b76699ae",
       "status" : "passed",
@@ -382,15 +391,6 @@
         "stop" : 1627250904536,
         "duration" : 60636
       }
-    }, {
-      "uid" : "476efc384bc83b8a",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/15//#testresult/476efc384bc83b8a",
-      "status" : "passed",
-      "time" : {
-        "start" : 1627250204929,
-        "stop" : 1627250265451,
-        "duration" : 60522
-      }
     } ]
   },
   "c5ddf585998a253dd573fba0dc8ccd93" : {
@@ -398,11 +398,20 @@
       "failed" : 1,
       "broken" : 17,
       "skipped" : 0,
-      "passed" : 18,
+      "passed" : 19,
       "unknown" : 0,
-      "total" : 36
+      "total" : 37
     },
     "items" : [ {
+      "uid" : "4136aab6d8b9cdd1",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/31//#testresult/4136aab6d8b9cdd1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1627329347149,
+        "stop" : 1627329383569,
+        "duration" : 36420
+      }
+    }, {
       "uid" : "ce1d8adf363aa859",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/ce1d8adf363aa859",
       "status" : "passed",
@@ -579,15 +588,6 @@
         "stop" : 1627251029605,
         "duration" : 35132
       }
-    }, {
-      "uid" : "28405ec34559ac29",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/15//#testresult/28405ec34559ac29",
-      "status" : "passed",
-      "time" : {
-        "start" : 1627250364179,
-        "stop" : 1627250400302,
-        "duration" : 36123
-      }
     } ]
   },
   "c56c6b258f439b04b8878255e2b31c90" : {
@@ -595,11 +595,20 @@
       "failed" : 0,
       "broken" : 9,
       "skipped" : 0,
-      "passed" : 27,
+      "passed" : 28,
       "unknown" : 0,
-      "total" : 36
+      "total" : 37
     },
     "items" : [ {
+      "uid" : "c8e550be0ce57c87",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/31//#testresult/c8e550be0ce57c87",
+      "status" : "passed",
+      "time" : {
+        "start" : 1627329236372,
+        "stop" : 1627329261933,
+        "duration" : 25561
+      }
+    }, {
       "uid" : "d6b0b7218787f2ad",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/d6b0b7218787f2ad",
       "status" : "passed",
@@ -771,15 +780,6 @@
         "stop" : 1627250929852,
         "duration" : 25312
       }
-    }, {
-      "uid" : "ab937eb037e14740",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/15//#testresult/ab937eb037e14740",
-      "status" : "passed",
-      "time" : {
-        "start" : 1627250265455,
-        "stop" : 1627250290810,
-        "duration" : 25355
-      }
     } ]
   },
   "d5930bb692116c72e798cf3eaa7c5391" : {
@@ -787,11 +787,20 @@
       "failed" : 0,
       "broken" : 5,
       "skipped" : 0,
-      "passed" : 31,
+      "passed" : 32,
       "unknown" : 0,
-      "total" : 36
+      "total" : 37
     },
     "items" : [ {
+      "uid" : "58447c03a4a0e8e8",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/31//#testresult/58447c03a4a0e8e8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1627329327739,
+        "stop" : 1627329347145,
+        "duration" : 19406
+      }
+    }, {
       "uid" : "4eaa17b30e96645",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/4eaa17b30e96645",
       "status" : "passed",
@@ -962,15 +971,6 @@
         "stop" : 1627250994469,
         "duration" : 18996
       }
-    }, {
-      "uid" : "f8ae69bedd1545e1",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/15//#testresult/f8ae69bedd1545e1",
-      "status" : "passed",
-      "time" : {
-        "start" : 1627250345131,
-        "stop" : 1627250364176,
-        "duration" : 19045
-      }
     } ]
   },
   "07fe76b1e487cb38d58a4e75b15e5047" : {
@@ -978,11 +978,20 @@
       "failed" : 0,
       "broken" : 36,
       "skipped" : 0,
-      "passed" : 0,
+      "passed" : 1,
       "unknown" : 0,
-      "total" : 36
+      "total" : 37
     },
     "items" : [ {
+      "uid" : "284af40056072114",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/31//#testresult/284af40056072114",
+      "status" : "passed",
+      "time" : {
+        "start" : 1627329299663,
+        "stop" : 1627329327735,
+        "duration" : 28072
+      }
+    }, {
       "uid" : "7dd7aea411fd08f9",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/7dd7aea411fd08f9",
       "status" : "broken",
@@ -1172,16 +1181,6 @@
         "stop" : 1627250975465,
         "duration" : 16788
       }
-    }, {
-      "uid" : "5b7fa588fcee5b7a",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/15//#testresult/5b7fa588fcee5b7a",
-      "status" : "broken",
-      "statusDetails" : "FileNotFoundError: [Errno 2] No such file or directory: 'E:/conduit/exam_masterpiece/test.csv'",
-      "time" : {
-        "start" : 1627250328212,
-        "stop" : 1627250345094,
-        "duration" : 16882
-      }
     } ]
   },
   "145895ccc65e6410f1f2ed102c32cc17" : {
@@ -1189,11 +1188,20 @@
       "failed" : 0,
       "broken" : 21,
       "skipped" : 0,
-      "passed" : 15,
+      "passed" : 16,
       "unknown" : 0,
-      "total" : 36
+      "total" : 37
     },
     "items" : [ {
+      "uid" : "81246a788105b61d",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/31//#testresult/81246a788105b61d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1627329261937,
+        "stop" : 1627329299659,
+        "duration" : 37722
+      }
+    }, {
       "uid" : "a4e52a339320f6a7",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/a4e52a339320f6a7",
       "status" : "broken",
@@ -1374,27 +1382,28 @@
         "stop" : 1627250958599,
         "duration" : 28744
       }
-    }, {
-      "uid" : "b2943e35ef917f1",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/15//#testresult/b2943e35ef917f1",
-      "status" : "passed",
-      "time" : {
-        "start" : 1627250290814,
-        "stop" : 1627250328209,
-        "duration" : 37395
-      }
     } ]
   },
   "dce9624b9435308259a1625b9477448f" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 28,
+      "broken" : 29,
       "skipped" : 0,
       "passed" : 8,
       "unknown" : 0,
-      "total" : 36
+      "total" : 37
     },
     "items" : [ {
+      "uid" : "51e6f9c5f19a688d",
+      "reportUrl" : "https://sirokeszter.github.io/conduit/31//#testresult/51e6f9c5f19a688d",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"cookie-policy-panel\"]/div/div[2]/button[2]\"}\n  (Session info: headless chrome=91.0.4472.164)",
+      "time" : {
+        "start" : 1627329162518,
+        "stop" : 1627329175297,
+        "duration" : 12779
+      }
+    }, {
       "uid" : "9c5a6cb6082e14a7",
       "reportUrl" : "https://sirokeszter.github.io/conduit/30//#testresult/9c5a6cb6082e14a7",
       "status" : "passed",
@@ -1576,15 +1585,6 @@
         "start" : 1627250805871,
         "stop" : 1627250843896,
         "duration" : 38025
-      }
-    }, {
-      "uid" : "e0737b8cce86489f",
-      "reportUrl" : "https://sirokeszter.github.io/conduit/15//#testresult/e0737b8cce86489f",
-      "status" : "passed",
-      "time" : {
-        "start" : 1627250165814,
-        "stop" : 1627250204925,
-        "duration" : 39111
       }
     } ]
   }
