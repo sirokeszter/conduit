@@ -1,12 +1,12 @@
 {
-  "uid" : "62a361ac4b7599e5",
+  "uid" : "82ed158b3b944d5f",
   "name" : "test_login",
   "fullName" : "exam_masterpiece.test_ts2_login#test_login",
   "historyId" : "c56c6b258f439b04b8878255e2b31c90",
   "time" : {
-    "start" : 1627251361273,
-    "stop" : 1627251382813,
-    "duration" : 21540
+    "start" : 1627280145455,
+    "stop" : 1627280170903,
+    "duration" : 25448
   },
   "status" : "passed",
   "flaky" : false,
@@ -16,21 +16,21 @@
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "77d01090389da98e",
+      "uid" : "98c501c3f59eab38",
       "name" : "log",
-      "source" : "77d01090389da98e.txt",
+      "source" : "98c501c3f59eab38.txt",
       "type" : "text/plain",
       "size" : 344
     }, {
-      "uid" : "8bbc48c72427ba83",
+      "uid" : "aef10a8c300ffae3",
       "name" : "stdout",
-      "source" : "8bbc48c72427ba83.txt",
+      "source" : "aef10a8c300ffae3.txt",
       "type" : "text/plain",
-      "size" : 6
+      "size" : 69
     }, {
-      "uid" : "83986b572056acc0",
+      "uid" : "d45f255b3d187a40",
       "name" : "stderr",
-      "source" : "83986b572056acc0.txt",
+      "source" : "d45f255b3d187a40.txt",
       "type" : "text/plain",
       "size" : 215
     } ],
@@ -49,10 +49,10 @@
     "value" : "test_ts2_login"
   }, {
     "name" : "host",
-    "value" : "fv-az77-953"
+    "value" : "fv-az39-748"
   }, {
     "name" : "thread",
-    "value" : "4147-MainThread"
+    "value" : "3557-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -79,11 +79,20 @@
         "failed" : 0,
         "broken" : 8,
         "skipped" : 0,
-        "passed" : 12,
+        "passed" : 13,
         "unknown" : 0,
-        "total" : 20
+        "total" : 21
       },
       "items" : [ {
+        "uid" : "62a361ac4b7599e5",
+        "reportUrl" : "https://sirokeszter.github.io/conduit/17//#testresult/62a361ac4b7599e5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627251361273,
+          "stop" : 1627251382813,
+          "duration" : 21540
+        }
+      }, {
         "uid" : "d579522f154a0fa7",
         "reportUrl" : "https://sirokeszter.github.io/conduit/16//#testresult/d579522f154a0fa7",
         "status" : "passed",
@@ -266,6 +275,6 @@
     },
     "tags" : [ ]
   },
-  "source" : "62a361ac4b7599e5.json",
+  "source" : "82ed158b3b944d5f.json",
   "parameterValues" : [ ]
 }
