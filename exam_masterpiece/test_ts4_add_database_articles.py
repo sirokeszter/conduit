@@ -43,7 +43,7 @@ def test_add_database_articles():
         article_tag = driver.find_element_by_xpath('//*[@id="app"]//fieldset[4]//input')
         publish_button = driver.find_element_by_xpath('//*[@id="app"]//form/button')
 
-        os.chdir(r'E:\conduit\exam_masterpiece\test.csv')
+        os.chdir(r'E:\conduit\exam_masterpiece')
         with open('test.csv', 'r', encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
             for row in csvreader:
