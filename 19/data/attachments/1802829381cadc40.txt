@@ -1,0 +1,3 @@
+Update successful!
+http://localhost:1667/#/@tyukocska1/
+Registration failed!

@@ -1,0 +1,15 @@
+{
+  "total" : 1,
+  "items" : [ {
+    "uid" : "8427651a45e04eaf9ad0faaa1daf6b66",
+    "name" : "exam_masterpiece",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 2,
+      "skipped" : 0,
+      "passed" : 6,
+      "unknown" : 0,
+      "total" : 8
+    }
+  } ]
+}
