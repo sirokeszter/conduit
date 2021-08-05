@@ -1,4 +1,12 @@
 [ {
+  "buildOrder" : 33,
+  "reportUrl" : "https://sirokeszter.github.io/conduit/33/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "Product defects" : 1,
+    "Test defects" : 1
+  }
+}, {
   "buildOrder" : 32,
   "reportUrl" : "https://sirokeszter.github.io/conduit/32/",
   "reportName" : "Allure Report with history",
@@ -125,13 +133,6 @@
 }, {
   "buildOrder" : 17,
   "reportUrl" : "https://sirokeszter.github.io/conduit/17/",
-  "reportName" : "Allure Report with history",
-  "data" : {
-    "Test defects" : 6
-  }
-}, {
-  "buildOrder" : 16,
-  "reportUrl" : "https://sirokeszter.github.io/conduit/16/",
   "reportName" : "Allure Report with history",
   "data" : {
     "Test defects" : 6
