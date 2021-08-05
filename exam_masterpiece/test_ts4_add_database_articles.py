@@ -13,10 +13,10 @@ def test_add_database_articles():
 
     try:
         driver.get("http://localhost:1667/#")
-        time.sleep(10)
+        time.sleep(6)
 
         # Activate Sign in input field:
-        login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
+        login = driver.find_element_by_xpath('//a[@href="#/login"]')
         login.click()
 
         # Fill input fields:
@@ -33,16 +33,13 @@ def test_add_database_articles():
         fill_login("kiskakas1@gmail.com", "Kiskakas1$")
 
         time.sleep(3)
-        new_article = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a').click()
+        new_article = driver.find_element_by_xpath('//a[@href="#/editor"]').click()
         time.sleep(2)
         article_title = driver.find_element_by_xpath('//*[@id="app"]//fieldset[1]/input')
         article_about = driver.find_element_by_xpath('//*[@id="app"]//fieldset[2]/input')
         article_content = driver.find_element_by_xpath('//*[@id="app"]//fieldset[3]/textarea')
         article_tag = driver.find_element_by_xpath('//*[@id="app"]//fieldset[4]//input')
         publish_button = driver.find_element_by_xpath('//*[@id="app"]//form/button')
-
-        # filename = r'\content\drive\MyDrive\test.csv'
-        # open(filename)
 
         with open('./test.csv', 'r', encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
@@ -53,11 +50,11 @@ def test_add_database_articles():
                 article_tag.send_keys(row[3])
                 publish_button.click()
                 time.sleep(2)
-                driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a').click()
+                driver.find_element_by_xpath('//a[@href="#/editor"]').click()
                 time.sleep(1)
 
         # Comparing the imported data from csv with the new posts' data:
-        user_feeds = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
+        user_feeds = driver.find_element_by_xpath(f'//a[@href="#/@{username}/"]').click()
         time.sleep(2)
 
         feed_title_list = []
@@ -65,7 +62,7 @@ def test_add_database_articles():
 
         while True:
             time.sleep(2)
-            feed_titles = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/h1')
+            feed_titles = driver.find_elements_by_tag_name('h1')
             for title in feed_titles:
                 feed_title_list.append(title.text)
 

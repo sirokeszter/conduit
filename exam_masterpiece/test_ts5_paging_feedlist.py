@@ -4,7 +4,6 @@ def test_paging_feedlist():
     from webdriver_manager.chrome import ChromeDriverManager
     from selenium.common.exceptions import NoSuchElementException
     import time
-    import csv
 
     options = Options()
     options.add_argument('--headless')
@@ -13,10 +12,10 @@ def test_paging_feedlist():
 
     try:
         driver.get("http://localhost:1667/#/")
-        time.sleep(10)
+        time.sleep(6)
 
         # Activate Sign in input field:
-        login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
+        login = driver.find_element_by_xpath('//a[@href="#/login"]')
         login.click()
 
         # Fill input fields:
@@ -29,7 +28,6 @@ def test_paging_feedlist():
             password.send_keys(pw)
             button.click()
 
-
         fill_login("kiskakas1@gmail.com", "Kiskakas1$")
 
         time.sleep(3)
@@ -38,13 +36,12 @@ def test_paging_feedlist():
 
         while True:
             time.sleep(2)
-            feed_titles = driver.find_elements_by_xpath('//*[@id="app"]//a/h1')
+            feed_titles = driver.find_elements_by_tag_name('h1')
             for feed in feed_titles:
                 feed_title_list.append(feed.text)
             try:
                 page_count += 1
                 driver.find_element_by_link_text(str(page_count)).click()
-            # driver.find_element_by_xpath('//*[@id="app"]//nav/ul/li[%]/a')
             except NoSuchElementException:
                 # Stop loop if no more page available
                 break

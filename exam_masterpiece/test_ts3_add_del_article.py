@@ -12,10 +12,10 @@ def test_add_del_article():
 
     try:
         driver.get("http://localhost:1667/")
-        time.sleep(10)
+        time.sleep(6)
 
         # Sign in:
-        login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
+        login = driver.find_element_by_xpath('//a[@href="#/login"]')
         time.sleep(2)
         login.click()
 
@@ -34,7 +34,10 @@ def test_add_del_article():
 
         time.sleep(4)
 
-        new_article = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a').click()
+        # Checking the whole number of global feed titles:
+        global_feed_titles = driver.find_elements_by_tag_name('h1')
+
+        new_article = driver.find_element_by_xpath('//a[@href="#/editor"]').click()
         time.sleep(2)
 
         def write_new_article(title, about, content, tag):
@@ -55,7 +58,7 @@ def test_add_del_article():
 
         # Checking the elements (title, about, tag) of the new article:
         time.sleep(4)
-        my_articles = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
+        my_articles = driver.find_element_by_xpath(f'//a[@href="#/@{username}/"]').click()
         time.sleep(2)
 
         feed_title_list = []
@@ -65,9 +68,9 @@ def test_add_del_article():
         page_count = 1
 
         article_box = driver.find_elements_by_xpath('//*[@id="app"]//div[@class="article-preview"]')
-        feed_titles = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/h1')
-        feed_abouts = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/p')
-        feed_tags = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/div/a')
+        feed_titles = driver.find_elements_by_tag_name('h1')
+        feed_abouts = driver.find_elements_by_tag_name('p')
+        feed_tags = driver.find_elements_by_xpath('//*[@class="tag-pill tag-default"]')
 
         time.sleep(2)
         for article in article_box:
@@ -93,22 +96,27 @@ def test_add_del_article():
 
         # Testing feed delete function:
         time.sleep(4)
-        my_articles1 = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
+        my_articles1 = driver.find_element_by_xpath(f'//a[@href="#/@{username}/"]').click()
         time.sleep(3)
-        feed_titles1 = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/h1')
+        feed_titles1 = driver.find_elements_by_tag_name('h1')
         feed_titles1[-1].click()
         time.sleep(1)
-        del_btn = driver.find_element_by_xpath('//*[@id="app"]//button/span').click()
-        time.sleep(1)
+        del_btn = driver.find_element_by_xpath('//*[@id="app"]//button/span')
+        time.sleep(2)
+        del_btn.click()
+        time.sleep(2)
 
         # Collect the new list after deleting:
         mod_feed_title_list = []
-        feed_titles_mod = driver.find_elements_by_xpath('//*[@id="app"]//div[2]//a/h1')
+        feed_titles_mod = driver.find_elements_by_tag_name('h1')
         for title in feed_titles_mod:
             mod_feed_title_list.append(title.text)
 
-        # Checking the deleted feed not exist with the len of feed_title_list (before-after):
-        assert int(len(feed_title_list)) - 1 == int(len(mod_feed_title_list))
+        print(len(global_feed_titles))
+        print(len(mod_feed_title_list))
+
+        # Checking the deleted feed not exist with the len of original global_feed_title (before-after):
+        assert int(len(global_feed_titles)) == int(len(mod_feed_title_list))
 
     finally:
         driver.close()

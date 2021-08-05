@@ -2,9 +2,7 @@ def test_favorite_feed_list():
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
     from webdriver_manager.chrome import ChromeDriverManager
-    from selenium.common.exceptions import NoSuchElementException
     import time
-    import csv
 
     options = Options()
     options.add_argument('--headless')
@@ -13,10 +11,10 @@ def test_favorite_feed_list():
 
     try:
         driver.get("http://localhost:1667/#/")
-        time.sleep(10)
+        time.sleep(6)
 
         # Activate Sign in input field:
-        login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
+        login = driver.find_element_by_xpath('//a[@href="#/login"]')
         time.sleep(3)
         login.click()
 
@@ -30,7 +28,7 @@ def test_favorite_feed_list():
             password.send_keys(pw)
             button.click()
 
-        username="kiskakas1"
+        username = "kiskakas1"
         fill_login("kiskakas1@gmail.com", "Kiskakas1$")
 
         time.sleep(3)
@@ -43,11 +41,11 @@ def test_favorite_feed_list():
         # Favorized articles:
         article_list = []
         time.sleep(6)
-        user_page = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a')
+        user_page = driver.find_element_by_xpath(f'//a[@href="#/@{username}/"]')
         time.sleep(2)
         user_page.click()
         time.sleep(4)
-        favorite_article = driver.find_element_by_xpath('//*[@id="app"]//div[2]//ul/li[2]/a').click()
+        favorite_article = driver.find_element_by_xpath(f'//a[@href="#/@{username}/favorites"]').click()
         time.sleep(2)
         articles = driver.find_elements_by_xpath('//*[@id="app"]//a/h1')
         for article in articles:
@@ -56,7 +54,7 @@ def test_favorite_feed_list():
         print(article_list)
 
         # Choose the first three articles from the global feeds, and like them, then print into a list:
-        home = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[1]/a').click()
+        home = driver.find_element_by_xpath('//a[@href="#/"]').click()
         time.sleep(1)
         liked_list = []
         global_feeds = driver.find_elements_by_xpath('//*[@id="app"]//a/h1')

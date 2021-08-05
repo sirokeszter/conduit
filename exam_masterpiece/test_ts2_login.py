@@ -13,18 +13,17 @@ def test_login():
 
     try:
         driver.get("http://localhost:1667/#/")
-        time.sleep(10)
+        time.sleep(6)
 
         # Activate Sign in input field:
-        login = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
+        login = driver.find_element_by_xpath('//a[@href="#/login"]')
         time.sleep(3)
-        mousehover = driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
+        mousehover = driver.find_element_by_xpath('//a[@href="#/login"]')
         ActionChains(driver).move_to_element(mousehover).perform()
         time.sleep(3)
         actions = ActionChains(driver)
         actions.click(login)
         actions.perform()
-
 
         # Fill input fields:
         def fill_login(mail, pw):
@@ -43,12 +42,13 @@ def test_login():
 
         # Checking right up the user tag exist
         try:
-            user_page= driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[4]/a').click()
+            user_page = driver.find_element_by_xpath(f'//a[@href="#/@{username}/"]')
             time.sleep(2)
-            user_name = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div/div/div/h4').text
+            user_page.click()
+            user_name = driver.find_element_by_tag_name('h4').text
             time.sleep(2)
             print(driver.current_url)
-            if driver.current_url == f"http://localhost:1667/#/@{user_name}/" and user_name==username:
+            if driver.current_url == f"http://localhost:1667/#/@{user_name}/" and user_name == username:
                 print("Logged in with correct user name")
         except NoSuchElementException:
             print(False)
